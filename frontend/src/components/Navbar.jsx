@@ -132,15 +132,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div
-            className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300 cursor-pointer flex items-center gap-2"
-            onClick={() => handleLinkClick('home', '/')}
-          >
-            <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-              X
+          <div className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300 cursor-pointer flex items-center"
+          onClick={() => handleLinkClick('home', '/')}>
+              <img
+                src="/src/assets/logoXsanta.png"
+                alt="Xsanta Logo"
+                className="w-12 h-12 object-contain rounded-lg bg-white/10 p-1"
+              />
+              XSANTA
             </div>
-            XSANTA
-          </div>
+          
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
