@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { 
   ChevronDown, Menu, X, Home, User, Briefcase, Image, Mail, Info, 
   Zap, Shield, Award, ShoppingCart, Apple, Smartphone, Globe, 
@@ -8,11 +7,9 @@ import {
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
-  const location = useLocation();
-  
-  const activeLink = location.pathname;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,22 +20,23 @@ export default function Navbar() {
   }, []);
 
   const mainNavItems = [
-    { name: 'home', label: 'Home', icon: Home },
-    { name: 'about', label: 'About', icon: User },
+    { name: 'home', label: 'Home', icon: Home, path: '/' },
+    { name: 'about', label: 'About', icon: User, path: '/about' },
     {
       name: 'services',
       label: 'Services',
       icon: Briefcase,
+      path: '/services',
       dropdown: [
         {
           name: 'development',
           label: 'Development',
           icon: Shield,
           children: [
-            { name: 'frontend', label: 'Frontend Development', icon: Globe },
-            { name: 'backend', label: 'Backend Development', icon: FileText },
-            { name: 'fullstack', label: 'Full Stack Development', icon: Award },
-            { name: 'ecommerce', label: 'E-commerce Development', icon: ShoppingCart }
+            { name: 'frontend', label: 'Frontend Development', icon: Globe, path: '/services/frontend' },
+            { name: 'backend', label: 'Backend Development', icon: FileText, path: '/services/backend' },
+            { name: 'fullstack', label: 'Full Stack Development', icon: Award, path: '/services/fullstack' },
+            { name: 'ecommerce', label: 'E-commerce Development', icon: ShoppingCart, path: '/services/ecommerce' }
           ]
         },
         {
@@ -46,10 +44,10 @@ export default function Navbar() {
           label: 'Mobile Development',
           icon: Zap,
           children: [
-            { name: 'ios', label: 'iOS Development', icon: Apple },
-            { name: 'android', label: 'Android Development', icon: Smartphone },
-            { name: 'react-native', label: 'React Native', icon: Globe },
-            { name: 'flutter', label: 'Flutter Development', icon: File }
+            { name: 'ios', label: 'iOS Development', icon: Apple, path: '/services/ios' },
+            { name: 'android', label: 'Android Development', icon: Smartphone, path: '/services/android' },
+            { name: 'react-native', label: 'React Native', icon: Globe, path: '/services/react-native' },
+            { name: 'flutter', label: 'Flutter Development', icon: File, path: '/services/flutter' }
           ]
         },
         {
@@ -57,10 +55,10 @@ export default function Navbar() {
           label: 'Game Development',
           icon: Award,
           children: [
-            { name: 'poker', label: 'Poker Game Development', icon: Zap },
-            { name: 'casino', label: 'Casino Game Development', icon: Award },
-            { name: 'mobile-game', label: 'Mobile Game Development', icon: Smartphone },
-            { name: 'browser-game', label: 'Browser Game Development', icon: Globe }
+            { name: 'poker', label: 'Poker Game Development', icon: Zap, path: '/services/poker' },
+            { name: 'casino', label: 'Casino Game Development', icon: Award, path: '/services/casino' },
+            { name: 'mobile-game', label: 'Mobile Game Development', icon: Smartphone, path: '/services/mobile-game' },
+            { name: 'browser-game', label: 'Browser Game Development', icon: Globe, path: '/services/browser-game' }
           ]
         },
         {
@@ -68,10 +66,10 @@ export default function Navbar() {
           label: 'Content Writing Solutions',
           icon: FileText,
           children: [
-            { name: 'blog', label: 'Blog Writing', icon: FileText },
-            { name: 'article', label: 'Article Writing', icon: File },
-            { name: 'website-content', label: 'Website Content', icon: Globe },
-            { name: 'product-description', label: 'Product Description', icon: ShoppingCart }
+            { name: 'blog', label: 'Blog Writing', icon: FileText, path: '/services/blog-writing' },
+            { name: 'article', label: 'Article Writing', icon: File, path: '/services/article-writing' },
+            { name: 'website-content', label: 'Website Content', icon: Globe, path: '/services/website-content' },
+            { name: 'product-description', label: 'Product Description', icon: ShoppingCart, path: '/services/product-description' }
           ]
         },
         {
@@ -79,10 +77,10 @@ export default function Navbar() {
           label: 'Translation Solutions',
           icon: Book,
           children: [
-            { name: 'article-translation', label: 'Article Translation', icon: FileText },
-            { name: 'doc-translation', label: 'Document Translation', icon: File },
-            { name: 'website-translation', label: 'Website Translation', icon: Globe },
-            { name: 'book-translation', label: 'Book Translation', icon: Book }
+            { name: 'article-translation', label: 'Article Translation', icon: FileText, path: '/services/article-translation' },
+            { name: 'doc-translation', label: 'Document Translation', icon: File, path: '/services/doc-translation' },
+            { name: 'website-translation', label: 'Website Translation', icon: Globe, path: '/services/website-translation' },
+            { name: 'book-translation', label: 'Book Translation', icon: Book, path: '/services/book-translation' }
           ]
         },
         {
@@ -90,31 +88,38 @@ export default function Navbar() {
           label: 'Industry Solutions',
           icon: Activity,
           children: [
-            { name: 'agriculture', label: 'Agriculture', icon: Activity },
-            { name: 'automotive', label: 'Automotive', icon: Car },
-            { name: 'real-estate', label: 'Real Estate', icon: Building },
-            { name: 'marketing', label: 'Marketing', icon: Zap },
-            { name: 'health-beauty', label: 'Health & Beauty', icon: Heart },
-            { name: 'sports-fitness', label: 'Sports & Fitness', icon: Activity },
-            { name: 'entertainment', label: 'Entertainment', icon: Film }
+            { name: 'marketing', label: 'Marketing', icon: Zap, path: '/industries/marketing' },
+            { name: 'health-beauty', label: 'Health & Beauty', icon: Heart, path: '/industries/health-beauty' },
+            { name: 'sports-fitness', label: 'Sports & Fitness', icon: Activity, path: '/industries/sports-fitness' },
+            { name: 'entertainment', label: 'Entertainment', icon: Film, path: '/industries/entertainment' }
           ]
         }
       ]
     },
-    { name: 'portfolio', label: 'Portfolio', icon: Image },
-    { name: 'blog', label: 'Blog', icon: Info },
-    { name: 'contact', label: 'Contact', icon: Mail }
+    { name: 'portfolio', label: 'Portfolio', icon: Image, path: '/portfolio' },
+    { name: 'blog', label: 'Blog', icon: Info, path: '/blog' },
+    { name: 'contact', label: 'Contact', icon: Mail, path: '/contact' }
   ];
 
-  const navLinkClass = (itemPath, isDropdown = false) =>
-    `group relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer flex items-center gap-2 ${activeLink === itemPath
+  const navLinkClass = (linkName, isDropdown = false) =>
+    `group relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer flex items-center gap-2 ${activeLink === linkName
       ? "bg-gradient-to-r from-violet-500 to-pink-500 text-white shadow-lg shadow-violet-300/50"
       : "text-violet-700 hover:text-white hover:bg-gradient-to-r hover:from-violet-400 hover:to-pink-400 hover:shadow-lg hover:shadow-violet-200/50"
     } ${isDropdown ? 'w-full justify-start' : ''}`;
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (linkName, path) => {
+    setActiveLink(linkName);
     setIsMobileMenuOpen(false);
     setHoveredDropdown(null);
+    
+    // For demo purposes, we're using console.log
+    // In a real app with React Router, you'd use: navigate(path)
+    console.log(`Navigating to: ${path}`);
+    
+    // Simulate navigation by updating URL without reload
+    if (path) {
+      window.history.pushState({}, '', path);
+    }
   };
 
   const toggleMobileMenu = () => {
@@ -127,16 +132,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-            to="/"
+          <div
             className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300 cursor-pointer flex items-center gap-2"
-            onClick={handleLinkClick}
+            onClick={() => handleLinkClick('home', '/')}
           >
             <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
               X
             </div>
             XSANTA
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
@@ -147,10 +151,9 @@ export default function Navbar() {
                 onMouseEnter={() => item.dropdown && setHoveredDropdown(item.name)}
                 onMouseLeave={() => setHoveredDropdown(null)}
               >
-                <Link
-                  to={item.path}
-                  className={navLinkClass(item.path)}
-                  onClick={handleLinkClick}
+                <div
+                  className={navLinkClass(item.name)}
+                  onClick={() => handleLinkClick(item.name, item.path)}
                 >
                   <item.icon className="w-4 h-4" />
                   <span className="relative z-10">{item.label}</span>
@@ -166,7 +169,7 @@ export default function Navbar() {
                   <div className="absolute inset-0 rounded-full overflow-hidden">
                     <div className="absolute inset-0 translate-x-[-200%] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:translate-x-[200%] transition-transform duration-700"></div>
                   </div>
-                </Link>
+                </div>
 
                 {/* Mega Dropdown Menu */}
                 {item.dropdown && hoveredDropdown === item.name && (
@@ -184,7 +187,7 @@ export default function Navbar() {
                                 <div
                                   key={child.name}
                                   className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-all duration-300 cursor-pointer"
-                                  onClick={() => handleLinkClick(child.name)}
+                                  onClick={() => handleLinkClick(child.name, child.path)}
                                 >
                                   <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                     <child.icon className="w-3.5 h-3.5 text-white" />
@@ -207,7 +210,10 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <button className="px-6 py-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:from-violet-600 hover:to-pink-600">
+            <button 
+              onClick={() => handleLinkClick('contact', '/contact')}
+              className="px-6 py-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:from-violet-600 hover:to-pink-600"
+            >
               Get Started
             </button>
           </div>
@@ -224,26 +230,34 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border border-violet-100 rounded-b-xl shadow-xl">
-            <div className="px-4 py-4 space-y-2">
+            <div className="px-4 py-4 space-y-2 max-h-96 overflow-y-auto">
               {mainNavItems.map((item) => (
                 <div key={item.name}>
                   <div
                     className={navLinkClass(item.name, true)}
-                    onClick={() => handleLinkClick(item.name)}
+                    onClick={() => handleLinkClick(item.name, item.path)}
                   >
                     <item.icon className="w-4 h-4" />
                     <span>{item.label}</span>
                   </div>
                   {item.dropdown && (
                     <div className="ml-6 mt-2 space-y-1">
-                      {item.dropdown.map((dropdownItem) => (
-                        <div
-                          key={dropdownItem.name}
-                          className={`${navLinkClass(dropdownItem.name, true)} text-sm`}
-                          onClick={() => handleLinkClick(dropdownItem.name)}
-                        >
-                          <dropdownItem.icon className="w-3 h-3" />
-                          <span>{dropdownItem.label}</span>
+                      {item.dropdown.map((category) => (
+                        <div key={category.name} className="space-y-1">
+                          <div className="text-xs font-semibold text-gray-500 px-3 py-1 flex items-center gap-2">
+                            <category.icon className="w-3 h-3" />
+                            {category.label}
+                          </div>
+                          {category.children.map((child) => (
+                            <div
+                              key={child.name}
+                              className={`${navLinkClass(child.name, true)} text-xs ml-2`}
+                              onClick={() => handleLinkClick(child.name, child.path)}
+                            >
+                              <child.icon className="w-3 h-3" />
+                              <span>{child.label}</span>
+                            </div>
+                          ))}
                         </div>
                       ))}
                     </div>
@@ -251,7 +265,10 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="pt-4 border-t border-violet-100">
-                <button className="w-full px-4 py-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300">
+                <button 
+                  onClick={() => handleLinkClick('contact', '/contact')}
+                  className="w-full px-4 py-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                >
                   Get Started
                 </button>
               </div>
