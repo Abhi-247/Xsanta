@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import logoXsanta from '../assets/logoXsanta.png';
 
 const Footer = () => {
   const services = [
@@ -53,7 +54,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 text-2xl font-bold text-white">
               <img
-                src="/src/assets/logoXsanta.png"
+                src={logoXsanta}
                 alt="Xsanta Logo"
                 className="w-12 h-12 object-contain rounded-lg bg-white/10 p-1"
               />

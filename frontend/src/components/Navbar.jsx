@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+
+import logoXsanta from '../assets/logoXsanta.png';
 import { 
   ChevronDown, Menu, X, Home, User, Briefcase, Image, Mail, Info, 
   Zap, Shield, Award, ShoppingCart, Apple, Smartphone, Globe, 
   FileText, File, Book, Activity, Car, Building, Heart, Film
 } from "lucide-react";
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -135,7 +138,7 @@ export default function Navbar() {
           <div className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300 cursor-pointer flex items-center"
           onClick={() => handleLinkClick('home', '/')}>
               <img
-                src="/src/assets/logoXsanta.png"
+                src={logoXsanta}
                 alt="Xsanta Logo"
                 className="w-12 h-12 object-contain rounded-lg bg-white/10 p-1"
               />

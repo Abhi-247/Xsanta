@@ -228,7 +228,7 @@ export default function About() {
               Rapid Innovation
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              We stay ahead of technology trends to deliver cutting-edge solutions that give you a competitive advantage.
+              We stay ahead Of technology trends to deliver cutting-edge solutions that give you a competitive advantage.
             </p>
           </div>
 
@@ -248,7 +248,7 @@ export default function About() {
               Global Expertise
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Our diverse team brings international perspectives and experience to solve complex business challenges.
+              Our diverse team bring international perspectives and experience to solve complex business challenges.
             </p>
           </div>
         </div>
