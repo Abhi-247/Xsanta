@@ -1,3 +1,5 @@
+import ClientsSection from "../components/Clients";
+import GlobalCTA from "../components/GlobalCTA";
 import Hero from "../components/Hero";
 import Process from "../components/Process";
 import Services from "../components/Services";
@@ -11,7 +13,9 @@ const Home=()=>{
     <Services/>
     <WhyChooseXSANTA/>
     {/* <ClientTestimonials/> */}
+    <ClientsSection/>
     <Process/>
+    <GlobalCTA/>
 
     </>
   )

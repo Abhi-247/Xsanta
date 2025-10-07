@@ -8,7 +8,7 @@ export default function Hero() {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -26,7 +26,10 @@ export default function Hero() {
   }));
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-400 via-purple-300 to-blue-300">
+    // <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-50 via-rose-100 to-amber-50">
+
+
       {/* Animated Stars Background */}
       {stars.map((star) => (
         <div
@@ -53,10 +56,10 @@ export default function Hero() {
 
       {/* Main Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-20">
-        
+
         {/* Hero Section */}
         <div className={`text-center max-w-5xl transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          
+
           {/* Main Heading with Gradient */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent animate-gradient">
@@ -101,7 +104,7 @@ export default function Hero() {
 
           {/* Stats Section */}
           <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            
+
             {/* Stat Card 1 */}
             <div className="group bg-white/20 backdrop-blur-md rounded-2xl p-8 border border-white/30 hover:bg-white/40 hover:border-white/60 transition-all duration-500 hover:scale-110 hover:shadow-2xl transform hover:-rotate-2">
               <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2 group-hover:scale-125 transition-transform duration-500">
@@ -159,8 +162,8 @@ export default function Hero() {
     </div>
 
 
-   // services
-   
+    // services
+
   );
-  
+
 }

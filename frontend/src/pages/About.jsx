@@ -32,12 +32,7 @@ export default function About() {
     { number: "15+", label: "Countries Served" }
   ];
 
-  const timeline = [
-    { year: "2018", title: "Company Founded", description: "Started our journey with a vision to transform businesses" },
-    { year: "2020", title: "Global Expansion", description: "Extended services to international markets" },
-    { year: "2022", title: "AI Integration", description: "Pioneered AI-powered solutions for our clients" },
-    { year: "2024", title: "Industry Leader", description: "Recognized as a leading IT services provider" }
-  ];
+  
 
   return (
     <div className="bg-white">
@@ -45,8 +40,8 @@ export default function About() {
       <div className="relative bg-gradient-to-br from-purple-50 via-pink-50 to-white overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
-        
-        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-32">
+
+        <div className="relative max-w-7xl mx-auto px-6 py-10 md:py-22">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               About{' '}
@@ -62,7 +57,7 @@ export default function About() {
       </div>
 
       {/* Mission & Vision */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Mission */}
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200">
@@ -71,8 +66,7 @@ export default function About() {
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
             <p className="text-gray-600 leading-relaxed text-lg">
-              To deliver transformative technology solutions that drive business growth, enhance operational efficiency, and create lasting value for our clients across the globe.
-            </p>
+              To revolutionize the gaming industry by creating immersive, innovative, and technically superior gaming experiences that bring joy and excitement to players worldwide. We strive to transform creative visions into reality through cutting-edge technology and exceptional craftsmanship.</p>
           </div>
 
           {/* Vision */}
@@ -82,14 +76,13 @@ export default function About() {
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
             <p className="text-gray-600 leading-relaxed text-lg">
-              To be the world's most trusted partner in digital transformation, setting new standards in innovation, quality, and customer satisfaction in the IT services industry.
-            </p>
+              To be the global leader in game development and software engineering, recognized for our innovation, quality, and ability to deliver extraordinary digital experiences that shape the future of interactive entertainment and technology. </p>
           </div>
         </div>
       </div>
 
       {/* Stats Section */}
-      <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 py-20">
+      <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 py-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -107,7 +100,7 @@ export default function About() {
       </div>
 
       {/* Core Values */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Our Core{' '}
@@ -140,78 +133,10 @@ export default function About() {
         </div>
       </div>
 
-      {/* Our Journey */}
-      <div className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                Journey
-              </span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Milestones that shaped our path to becoming an industry leader
-            </p>
-          </div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-300 to-pink-300"></div>
-
-            {/* Timeline Items */}
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex flex-col md:flex-row gap-8 items-center ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}
-                >
-                  <div className="flex-1 md:text-right">
-                    {index % 2 === 0 && (
-                      <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200">
-                        <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-2">
-                          {item.year}
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-600">
-                          {item.description}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="relative z-10">
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 border-4 border-white shadow-lg"></div>
-                  </div>
-
-                  <div className="flex-1">
-                    {index % 2 !== 0 && (
-                      <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200">
-                        <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-2">
-                          {item.year}
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-600">
-                          {item.description}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Why Choose Us */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose{' '}
@@ -254,20 +179,29 @@ export default function About() {
         </div>
       </div>
 
+      
+
       {/* CTA Section */}
-      <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 py-20">
+
+      <div className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your Business?
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Ready to Work <span className="text-purple-600">Together?</span>
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
-            Let's discuss how we can help you achieve your digital goals
+          <p className="text-lg md:text-xl text-gray-600 mb-8">
+            Let's collaborate to bring your vision to life. Whether it's a game, web application, or mobile app, we're here to make it extraordinary.
           </p>
-          <button className="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            Get in Touch
-          </button>
+          <div className="flex flex-col md:flex-row justify-center gap-4">
+            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              Start a Project
+            </button>
+            <button className="px-8 py-4 bg-gray-100 text-gray-800 rounded-full font-semibold text-lg shadow hover:shadow-md hover:scale-105 transition-all duration-300">
+              View Our Work
+            </button>
+          </div>
         </div>
       </div>
+
     </div>
   );
 }
