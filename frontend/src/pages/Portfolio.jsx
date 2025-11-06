@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CrickStock11 from "../assets/crickstock.jpeg"
 import Xegality from "../assets/xegality.jpeg"
 import myfirstfoot from "../assets/my-foot-first.jpeg"
@@ -10,11 +10,12 @@ import makemytrip from "../assets/make-my-trip.jpeg"
 export default function XSantaPortfolio() {
   const [filter, setFilter] = useState('All');
 
+
   const stats = [
-    { value: '50+', label: 'Projects Delivered' },
-    { value: '25+', label: 'Happy Clients' },
-    { value: '5+', label: 'Years Experience' },
-    { value: '99%', label: 'Client Satisfaction' }
+    { value: 120, label: "Projects Completed" },
+    { value: 85, label: "Happy Clients" },
+    { value: 15, label: "AI Tools Built" },
+    { value: 12, label: "Countries Served" },
   ];
 
   const filters = [
@@ -86,6 +87,33 @@ export default function XSantaPortfolio() {
     ? projects
     : projects.filter(p => p.type === filter);
 
+
+  const [counts, setCounts] = useState(stats.map(() => 0));
+  useEffect(() => {
+    const duration = 2000; // animation duration in ms
+    const frameRate = 30; // updates per second
+    const totalFrames = Math.round((duration / 1000) * frameRate);
+
+    let frame = 0;
+
+    const counter = setInterval(() => {
+      frame++;
+      setCounts(
+        stats.map((s) =>
+          Math.round((s.value * frame) / totalFrames)
+        )
+      );
+
+      if (frame === totalFrames) {
+        clearInterval(counter);
+        setCounts(stats.map((s) => s.value)); // ensure all end at exact value
+      }
+    }, 1000 / frameRate);
+
+    return () => clearInterval(counter);
+  }, []);
+
+
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
@@ -113,17 +141,21 @@ export default function XSantaPortfolio() {
 
       {/* Stats */}
       <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 hover:-translate-y-2 text-center">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-2">
-                {stat.value}
-              </div>
-              <div className="text-gray-600 text-sm">{stat.label}</div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {stats.map((stat, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 hover:-translate-y-2 text-center"
+          >
+            <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-2">
+              {counts[index]}+
             </div>
-          ))}
-        </div>
+            <div className="text-gray-600 text-sm">{stat.label}</div>
+          </div>
+        ))}
       </div>
+    </div>
+  );
 
       {/* Filters */}
       <div className="max-w-7xl mx-auto px-6 mb-12">
@@ -209,18 +241,17 @@ export default function XSantaPortfolio() {
       </div>
 
       {/* CTA Section */}
-      {/* CTA Section */}
-<div className="bg-white py-10 overflow-hidden">
+      <div className="bg-white py-10 overflow-hidden">
 
-  <div className="relative max-w-4xl mx-auto px-6 text-center">
-    <p className="text-xl md:text-2xl text-gray-700 mb-8">
-      Let's bring your vision to life with our expertise and innovative approach.
-    </p>
-    <button className="px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-      Start Your Project
-    </button>
-  </div>
-</div>
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xl md:text-2xl text-gray-700 mb-8">
+            Let's bring your vision to life with our expertise and innovative approach.
+          </p>
+          <button className="px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            Start Your Project
+          </button>
+        </div>
+      </div>
 
 
 

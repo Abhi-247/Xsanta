@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import logoXsanta from '../assets/logoXsanta.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const services = [
@@ -34,22 +35,22 @@ const Footer = () => {
   ];
 
   const legalLinks = [
-    'Privacy Policy',
-    'Terms of Service',
-    'Cookies'
-  ];
+  { name: 'Privacy Policy', path: '/privacy' },
+  { name: 'Refund Policy', path: '/refund' },
+  { name: 'Terms and Conditions', path: '/terms' },
+];
 
   return (
     <footer className="bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 relative overflow-hidden">
-      
+
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl opacity-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-10" />
-      
+
       {/* Main Footer Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12">
-          
+
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 text-2xl font-bold text-white">
@@ -142,9 +143,13 @@ const Footer = () => {
           </p>
           <div className="flex gap-6">
             {legalLinks.map((link, index) => (
-              <a key={index} href="#" className="text-purple-200 hover:text-pink-300 text-sm">
-                {link}
-              </a>
+              <Link
+                key={index}
+                to={link.path}
+                className="text-purple-200 hover:text-pink-300 text-sm"
+              >
+                {link.name}
+              </Link>
             ))}
           </div>
         </div>

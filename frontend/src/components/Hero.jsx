@@ -27,7 +27,7 @@ export default function Hero() {
 
   return (
     // <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300">
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-50 via-rose-100 to-amber-50">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-pink-50 via-rose-100 to-amber-50 ">
 
 
       {/* Animated Stars Background */}
