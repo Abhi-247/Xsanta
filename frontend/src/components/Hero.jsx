@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 export default function Hero() {
@@ -93,13 +94,15 @@ export default function Hero() {
               </span>
             </button>
 
-            <button className="group relative px-8 py-4 bg-white/30 backdrop-blur-sm text-gray-900 font-semibold rounded-lg border-2 border-white/50 hover:bg-white/60 hover:border-white transition-all duration-500 hover:scale-110 transform shadow-lg hover:shadow-2xl overflow-hidden">
+            <Link 
+             to="/contact"
+            className="group relative px-8 py-4 bg-white/30 backdrop-blur-sm text-gray-900 font-semibold rounded-lg border-2 border-white/50 hover:bg-white/60 hover:border-white transition-all duration-500 hover:scale-110 transform shadow-lg hover:shadow-2xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <span className="relative flex items-center gap-2">
                 <Play className="w-5 h-5 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
                 Contact Us
               </span>
-            </button>
+            </Link>
           </div>
 
           {/* Stats Section */}

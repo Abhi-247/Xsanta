@@ -5,40 +5,43 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const services = [
-    "Article Writing",
-    "Blog Writing",
-    "Case Study Writing",
-    "Product Descriptions",
-    "SEO Writing",
-    "Ebook Writing",
-    "Proofreading",
-    "Newsletter Writing"
+    { name: 'Article Writing', path: '/services/article-writing' },
+    { name: 'Blog Writing', path: '/services/blog-writing' },
+    { name: 'Case Study Writing', path: '/services/casestudy-writing' },
+    { name: 'Product Descriptions', path: '/services/product-description' },
+    { name: 'SEO Writing', path: '/services/seo' },
+    { name: 'Ebook Writing', path: '/services/ebook-writing' },
+    { name: 'Proofreading', path: '/services/proofreading' },
+    { name: 'Newsletter Writing', path: '/services/newsletter-writing' },
+
   ];
 
   const industries = [
-    "Agriculture",
-    "Health & Beauty",
-    "Automotive",
-    "Sports & Fitness",
-    "Realestate & Construction",
-    "Entertainment & Gaming",
-    "Marketing & Advertising"
+    {name:'Agriculture',path:'/industries/agriculture'},
+    {name:'Health & Beauty',path:'/industries/health-beauty'},
+    {name:'Automotive',path:'/industries/automotive'},
+    {name:'Sports & Fitness',path:'/industries/sports-fitness'},
+    {name:'Realestate & Construction',path:'/industries/realestate-construction'},
+    {name:'Entertainment & Gaming',path:'/industries/entertainment'},
+    {name:'Marketing & Advertising',path:'/industries/marketing'}
+
   ];
 
   const company = [
-    'About Us',
-    'Our Team',
-    'Case Studies',
-    'Careers',
-    'Blog',
-    'Contact'
+    { name: 'About Us', path: '/about' },
+    { name: 'Our Team', path: '/about' },
+    { name: 'Case Studies', path: '/about' },
+    { name: 'Careers', path: '/contact' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' }
+
   ];
 
   const legalLinks = [
-  { name: 'Privacy Policy', path: '/privacy' },
-  { name: 'Refund Policy', path: '/refund' },
-  { name: 'Terms and Conditions', path: '/terms' },
-];
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Refund Policy', path: '/refund' },
+    { name: 'Terms and Conditions', path: '/terms' },
+  ];
 
   return (
     <footer className="bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 relative overflow-hidden">
@@ -70,12 +73,13 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold text-white mb-6">Services</h3>
             <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a href="#" className="text-purple-200 hover:text-pink-300 transition-colors duration-300">
-                    {service}
-                  </a>
-                </li>
+              {services.map((link, index) => (
+                <Link key={index}
+                  to={link.path} className="text-purple-200 hover:text-pink-300 transition-colors duration-300  flex"
+                >
+                   {link.name}
+
+                </Link>
               ))}
             </ul>
           </div>
@@ -84,12 +88,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold text-white mb-6">Industries</h3>
             <ul className="space-y-3">
-              {industries.map((industry, index) => (
-                <li key={index}>
-                  <a href="#" className="text-purple-200 hover:text-pink-300 transition-colors duration-300">
-                    {industry}
-                  </a>
-                </li>
+              {industries.map((link, index) => (
+                <Link key={index}
+                  to={link.path} className="text-purple-200 hover:text-pink-300 transition-colors duration-300 flex"
+                >
+                  {link.name}
+                </Link>
               ))}
             </ul>
           </div>
@@ -98,12 +102,15 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold text-white mb-6">Company</h3>
             <ul className="space-y-3">
-              {company.map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="text-purple-200 hover:text-pink-300 transition-colors duration-300">
-                    {item}
-                  </a>
-                </li>
+              {company.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.path}
+                  className="text-purple-200 hover:text-pink-300 transition-colors flex duration-300"
+                >
+                  {link.name}
+
+                </Link>
               ))}
             </ul>
           </div>

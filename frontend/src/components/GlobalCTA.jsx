@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function GlobalConnectHero() {
   const [mounted, setMounted] = useState(false);
@@ -31,7 +32,7 @@ export default function GlobalConnectHero() {
             Let's work together anywhere around the world
           </h1>
           
-          <button className="group bg-white hover:bg-pink-50 text-blue-500 font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 border-2 border-transparent hover:border-pink-200">
+          <Link to="/contact" className="group bg-white hover:bg-pink-50 text-blue-500 font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 border-2 border-transparent hover:border-pink-200">
             Start a Conversation
             <svg 
               className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
@@ -41,7 +42,7 @@ export default function GlobalConnectHero() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </button>
+          </Link>
         </div>
 
         {/* Map Section */}

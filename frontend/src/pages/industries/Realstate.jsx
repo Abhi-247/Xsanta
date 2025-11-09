@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Smartphone, Code } from 'lucide-react';
+import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Home, Building } from 'lucide-react';
 
-export default function IOSContentWriting() {
+export default function RealEstateConstruction() {
   const [, setScrolled] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
 
@@ -15,104 +15,104 @@ export default function IOSContentWriting() {
 
   const services = [
     {
-      icon: "📱",
-      title: "App Store Optimization",
-      description: "Compelling app titles, descriptions, and keywords that boost visibility and drive downloads on the App Store."
+      icon: <Home className="w-12 h-12" />,
+      title: "Property Listings",
+      description: "Compelling property descriptions that highlight features, benefits, and lifestyle to attract qualified buyers quickly."
     },
     {
-      icon: <Smartphone className="w-12 h-12" />,
-      title: "App Marketing Content",
-      description: "Persuasive landing pages, promotional content, and marketing materials that convert visitors into users."
+      icon: <Building className="w-12 h-12" />,
+      title: "Construction Content",
+      description: "Professional content for construction companies including project descriptions, company profiles, and service pages."
     },
     {
-      icon: "📖",
-      title: "User Guides & Documentation",
-      description: "Clear, user-friendly documentation, tutorials, and help content that enhances the user experience."
+      icon: "📝",
+      title: "Real Estate Blogs",
+      description: "Engaging blog content covering market trends, buying tips, investment advice, and local area guides."
     },
     {
-      icon: <Code className="w-12 h-12" />,
-      title: "Technical Writing",
-      description: "Developer documentation, API guides, and technical content for iOS development and integration."
+      icon: <PenTool className="w-12 h-12" />,
+      title: "Marketing Materials",
+      description: "Persuasive brochures, flyers, email campaigns, and promotional content for properties and projects."
     }
   ];
 
   const contentTypes = [
-    { icon: "📝", name: "App Descriptions", type: "App Store" },
-    { icon: "🎯", name: "Landing Pages", type: "Marketing" },
-    { icon: "📚", name: "User Manuals", type: "Documentation" },
-    { icon: "🔔", name: "Push Notifications", type: "Engagement" },
-    { icon: "📧", name: "In-App Messages", type: "Retention" },
-    { icon: "⭐", name: "Release Notes", type: "Updates" },
-    { icon: "💡", name: "Feature Highlights", type: "Promotion" },
-    { icon: "🛠️", name: "Developer Docs", type: "Technical" }
+    { icon: "🏡", name: "Property Listings", type: "Sales" },
+    { icon: "🏗️", name: "Project Descriptions", type: "Construction" },
+    { icon: "📰", name: "Market Reports", type: "Analysis" },
+    { icon: "💼", name: "Company Profiles", type: "Branding" },
+    { icon: "📧", name: "Email Campaigns", type: "Marketing" },
+    { icon: "🌆", name: "Area Guides", type: "Local Info" },
+    { icon: "📊", name: "Case Studies", type: "Portfolio" },
+    { icon: "🎯", name: "Landing Pages", type: "Conversion" }
   ];
 
   const process = [
     {
       number: "01",
-      title: "App Discovery",
-      description: "Deep dive into your iOS app features, target audience, and unique value proposition."
+      title: "Property Research",
+      description: "Understand property features, target audience, location benefits, and unique selling points."
     },
     {
       number: "02",
       title: "Content Strategy",
-      description: "Develop ASO-optimized content plans aligned with App Store guidelines and user needs."
+      description: "Develop keyword-optimized content plans that highlight value propositions and market positioning."
     },
     {
       number: "03",
       title: "Expert Writing",
-      description: "Craft compelling content that highlights features, benefits, and drives user engagement."
+      description: "Craft persuasive descriptions using industry terminology and emotional appeal to drive interest."
     },
     {
       number: "04",
-      title: "ASO & Optimization",
-      description: "Optimize with strategic keywords, metadata, and continuous performance monitoring."
+      title: "Review & Polish",
+      description: "Refine content for accuracy, compliance, and maximum impact before final delivery."
     }
   ];
 
   const features = [
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "ASO Expertise",
-      description: "Proven strategies to improve App Store rankings"
+      title: "Industry Expertise",
+      description: "Deep knowledge of real estate and construction"
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "iOS Specialists",
-      description: "Writers with deep iOS ecosystem knowledge"
+      title: "SEO Optimized",
+      description: "Content that ranks for property searches"
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "User-Focused",
-      description: "Content designed for iOS user experience"
+      title: "Buyer Focused",
+      description: "Appeals to target audience emotions and needs"
     },
     {
       icon: <Star className="w-8 h-8" />,
-      title: "Conversion Driven",
-      description: "Copy that turns browsers into active users"
+      title: "Fast Listings",
+      description: "Quick turnaround for urgent property sales"
     }
   ];
 
   const benefits = [
-    "App Store optimization (ASO)",
-    "Keyword research & integration",
-    "Compelling app descriptions",
-    "Feature-benefit focused copy",
-    "Screenshot captions",
-    "App preview scripts",
-    "Localization support",
-    "A/B testing recommendations"
+    "Compelling property descriptions",
+    "Local market knowledge",
+    "SEO keyword optimization",
+    "Lifestyle-focused copy",
+    "Feature-benefit highlighting",
+    "Neighborhood descriptions",
+    "Virtual tour scripts",
+    "Call-to-action optimization"
   ];
 
-  const appCategories = [
-    "Productivity Apps",
-    "Gaming & Entertainment",
-    "Health & Fitness",
-    "Finance & Business",
-    "Education & Learning",
-    "Social Networking",
-    "E-commerce & Shopping",
-    "Utilities & Tools"
+  const propertyTypes = [
+    "Residential Properties",
+    "Commercial Buildings",
+    "Luxury Estates",
+    "New Developments",
+    "Land & Lots",
+    "Industrial Spaces",
+    "Vacation Rentals",
+    "Investment Properties"
   ];
 
   return (
@@ -126,28 +126,28 @@ export default function IOSContentWriting() {
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                iOS Content Writing Services
+                Real Estate & Construction Content Writing
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Professional content that maximizes your App Store presence, engages iOS users, and drives downloads with strategic ASO and compelling copy.
+              Professional content that sells properties faster and showcases construction projects with compelling descriptions that convert browsers into buyers.
             </p>
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
-              Start Your iOS Project
+              Start Your Project
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
-          {/* Floating iOS Icon */}
+          {/* Floating Real Estate Icon */}
           <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <div className="text-9xl opacity-20">📱</div>
+            <div className="text-9xl opacity-20">🏠</div>
           </div>
         </div>
 
         {/* Feature Pills */}
         <div className="relative max-w-7xl mx-auto px-6 pb-12">
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["ASO Optimized", "iOS Experts", "Conversion Focused"].map((feature, index) => (
+            {["Industry Experts", "SEO Optimized", "Fast Turnaround"].map((feature, index) => (
               <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
                 {feature}
               </div>
@@ -161,10 +161,10 @@ export default function IOSContentWriting() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">iOS Writing Services</span>
+              Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Writing Services</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specialized content solutions for iOS apps and mobile platforms
+              Specialized content solutions for real estate and construction professionals
             </p>
           </div>
 
@@ -206,7 +206,7 @@ export default function IOSContentWriting() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Why Choose Our{' '}
               <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                iOS Writing
+                Real Estate Writing
               </span>
             </h2>
           </div>
@@ -238,12 +238,12 @@ export default function IOSContentWriting() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                iOS Content Types
+                Content Types
               </span>{' '}
               We Create
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From App Store listings to developer documentation, we cover all iOS content needs
+              From property listings to construction portfolios, we write it all
             </p>
           </div>
 
@@ -274,7 +274,7 @@ export default function IOSContentWriting() {
               Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Writing Process</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A proven methodology for iOS content that performs
+              A proven approach to create content that sells properties
             </p>
           </div>
 
@@ -303,7 +303,7 @@ export default function IOSContentWriting() {
         </div>
       </section>
 
-      {/* Benefits & Categories Section */}
+      {/* Benefits & Property Types Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
@@ -328,19 +328,19 @@ export default function IOSContentWriting() {
               </div>
             </div>
 
-            {/* App Categories */}
+            {/* Property Types */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                  App Categories We Serve
+                  Property Types We Cover
                 </span>
               </h2>
               <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:border-purple-200 transition-all duration-500">
                 <div className="space-y-3">
-                  {appCategories.map((category, index) => (
+                  {propertyTypes.map((type, index) => (
                     <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-purple-50 transition-colors">
                       <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full"></div>
-                      <span className="text-gray-700">{category}</span>
+                      <span className="text-gray-700">{type}</span>
                     </div>
                   ))}
                 </div>
@@ -354,17 +354,17 @@ export default function IOSContentWriting() {
       <section className="py-20 px-6 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Ready to Boost Your App Store Presence?
+            Ready to Sell Properties Faster?
           </h2>
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-            Let's create compelling iOS content that drives downloads and engages users
+            Let's create compelling content that attracts buyers and showcases your properties perfectly
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
               Get Free Quote
             </button>
             <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
-              View Portfolio
+              View Sample Listings
             </button>
           </div>
         </div>

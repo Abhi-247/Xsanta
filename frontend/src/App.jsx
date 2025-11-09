@@ -30,6 +30,19 @@ import WebsiteTranslation from "./pages/services/WebsiteTranslation";
 import TermsConditionsPage from "./pages/Terms";
 import RefundPolicyPage from "./pages/Refund";
 import PrivacyPolicyPage from "./pages/Privacy";
+import SEOWritingPage from "./pages/services/SEO";
+import CaseStudyWritingPage from "./pages/services/CaseStudyWriting";
+import EbookWritingPage from "./pages/services/EbookWriting";
+import NewsletterWriting from "./pages/services/NewsLetterWriting";
+import ProofreadingService from "./pages/services/Proofreading";
+import Marketing from "./pages/industries/Marketing";
+import HealthBeauty from "./pages/industries/HealthAndBeauty";
+import SportsFitness from "./pages/industries/SportsAndFitness";
+import Entertainment from "./pages/industries/Entertainment";
+import Automotive from "./pages/industries/Automotive";
+import Agriculture from "./pages/industries/Agriculture";
+import RealEstateConstruction from "./pages/industries/Realstate";
+import IOSContentWriting from "./pages/services/iOS";
 
 function App() {
   return (
@@ -58,6 +71,7 @@ function App() {
           <Route path="services/casino" element={<CasinoContentWriting />} />
           <Route path="services/mobile-game" element={<MobileGameDevPage />} />
           <Route path="services/browser-game" element={<BrowserGame />} />
+          <Route path="services/ios" element={<IOSContentWriting/>} />
           <Route path="services/blog-writing" element={<BlogWriting />} />
           <Route path="services/article-writing" element={<ArticleWriting />} />
           <Route path="services/website-content" element={<WebsiteContentWriting />} />
@@ -66,6 +80,25 @@ function App() {
           <Route path="services/doc-translation" element={<DocumentTranslationPage />} />
           <Route path="services/website-translation" element={<WebsiteTranslation />} />
           <Route path="services/book-translation" element={<BookTranslationPage />} />
+          <Route path="services/seo" element={<SEOWritingPage />} />
+          <Route path="services/casestudy-writing" element={<CaseStudyWritingPage />} />
+          <Route path="services/ebook-writing" element={< EbookWritingPage />} />
+          <Route path="services/newsletter-writing" element={<NewsletterWriting />} />
+          <Route path="services/proofreading" element={<ProofreadingService />} />
+          
+
+          <Route path="industries/marketing" element={<Marketing />} />
+          <Route path="industries/health-beauty" element={<HealthBeauty />} />
+          <Route path="industries/sports-fitness" element={<SportsFitness />} />
+          <Route path="industries/entertainment" element={<Entertainment/>} />
+          <Route path="industries/automotive" element={<Automotive/>} />
+          <Route path="industries/agriculture" element={<Agriculture/>} />
+          <Route path="industries/realestate-construction" element={<RealEstateConstruction/>} />
+
+
+
+          
+
 
           <Route path="terms" element={<TermsConditionsPage/>}/>
           <Route path="refund" element={<RefundPolicyPage/>}/>

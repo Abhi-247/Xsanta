@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Smartphone, Code } from 'lucide-react';
+import { Film, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Music, Video } from 'lucide-react';
 
-export default function IOSContentWriting() {
+export default function Entertainment() {
   const [, setScrolled] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
 
@@ -15,104 +15,104 @@ export default function IOSContentWriting() {
 
   const services = [
     {
-      icon: "📱",
-      title: "App Store Optimization",
-      description: "Compelling app titles, descriptions, and keywords that boost visibility and drive downloads on the App Store."
+      icon: <Video className="w-12 h-12" />,
+      title: "Streaming Platforms",
+      description: "Build Netflix-style video streaming services with content management, subscriptions, and personalized recommendations."
     },
     {
-      icon: <Smartphone className="w-12 h-12" />,
-      title: "App Marketing Content",
-      description: "Persuasive landing pages, promotional content, and marketing materials that convert visitors into users."
+      icon: <Music className="w-12 h-12" />,
+      title: "Music & Audio Apps",
+      description: "Create Spotify-like music platforms with playlist management, audio streaming, and social sharing features."
     },
     {
-      icon: "📖",
-      title: "User Guides & Documentation",
-      description: "Clear, user-friendly documentation, tutorials, and help content that enhances the user experience."
+      icon: "🎬",
+      title: "Event & Ticketing Systems",
+      description: "Comprehensive solutions for event management, ticket sales, seat selection, and access control for venues."
     },
     {
-      icon: <Code className="w-12 h-12" />,
-      title: "Technical Writing",
-      description: "Developer documentation, API guides, and technical content for iOS development and integration."
+      icon: <Film className="w-12 h-12" />,
+      title: "Content Distribution",
+      description: "Multi-platform content delivery networks with DRM protection, adaptive streaming, and global CDN integration."
     }
   ];
 
-  const contentTypes = [
-    { icon: "📝", name: "App Descriptions", type: "App Store" },
-    { icon: "🎯", name: "Landing Pages", type: "Marketing" },
-    { icon: "📚", name: "User Manuals", type: "Documentation" },
-    { icon: "🔔", name: "Push Notifications", type: "Engagement" },
-    { icon: "📧", name: "In-App Messages", type: "Retention" },
-    { icon: "⭐", name: "Release Notes", type: "Updates" },
-    { icon: "💡", name: "Feature Highlights", type: "Promotion" },
-    { icon: "🛠️", name: "Developer Docs", type: "Technical" }
+  const technologies = [
+    { icon: "🎥", name: "Video Streaming", type: "Platform" },
+    { icon: "🎵", name: "Audio Players", type: "Technology" },
+    { icon: "☁️", name: "CDN", type: "Delivery" },
+    { icon: "🔐", name: "DRM", type: "Security" },
+    { icon: "🤖", name: "AI Recommendations", type: "Personalization" },
+    { icon: "📱", name: "Mobile Apps", type: "Frontend" },
+    { icon: "💳", name: "Subscriptions", type: "Monetization" },
+    { icon: "📊", name: "Analytics", type: "Insights" }
   ];
 
   const process = [
     {
       number: "01",
-      title: "App Discovery",
-      description: "Deep dive into your iOS app features, target audience, and unique value proposition."
+      title: "Content Strategy",
+      description: "Define your content library, audience segments, monetization model, and platform requirements."
     },
     {
       number: "02",
-      title: "Content Strategy",
-      description: "Develop ASO-optimized content plans aligned with App Store guidelines and user needs."
+      title: "Platform Design",
+      description: "Create engaging interfaces with intuitive navigation, content discovery, and binge-worthy experiences."
     },
     {
       number: "03",
-      title: "Expert Writing",
-      description: "Craft compelling content that highlights features, benefits, and drives user engagement."
+      title: "Development & Integration",
+      description: "Build scalable streaming infrastructure with payment gateways, DRM, and analytics integration."
     },
     {
       number: "04",
-      title: "ASO & Optimization",
-      description: "Optimize with strategic keywords, metadata, and continuous performance monitoring."
+      title: "Launch & Optimize",
+      description: "Deploy across platforms and continuously optimize for performance, engagement, and retention."
     }
   ];
 
   const features = [
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "ASO Expertise",
-      description: "Proven strategies to improve App Store rankings"
+      title: "Fast Streaming",
+      description: "Buffer-free playback with adaptive bitrate streaming"
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "iOS Specialists",
-      description: "Writers with deep iOS ecosystem knowledge"
+      title: "Content Protection",
+      description: "Enterprise-grade DRM and piracy prevention systems"
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "User-Focused",
-      description: "Content designed for iOS user experience"
+      title: "Social Features",
+      description: "Comments, ratings, watch parties, and social sharing"
     },
     {
       icon: <Star className="w-8 h-8" />,
-      title: "Conversion Driven",
-      description: "Copy that turns browsers into active users"
+      title: "Personalized",
+      description: "AI-powered recommendations and custom playlists"
     }
   ];
 
   const benefits = [
-    "App Store optimization (ASO)",
-    "Keyword research & integration",
-    "Compelling app descriptions",
-    "Feature-benefit focused copy",
-    "Screenshot captions",
-    "App preview scripts",
-    "Localization support",
-    "A/B testing recommendations"
+    "Multi-device streaming support",
+    "Content management system",
+    "Subscription & pay-per-view",
+    "Live streaming capabilities",
+    "Offline download features",
+    "Advanced search & filters",
+    "Parental controls & profiles",
+    "Watch history & favorites"
   ];
 
-  const appCategories = [
-    "Productivity Apps",
-    "Gaming & Entertainment",
-    "Health & Fitness",
-    "Finance & Business",
-    "Education & Learning",
-    "Social Networking",
-    "E-commerce & Shopping",
-    "Utilities & Tools"
+  const solutions = [
+    "Video-on-Demand (VOD) Platforms",
+    "Music Streaming Services",
+    "Live Event Broadcasting",
+    "Online Gaming Platforms",
+    "Podcast & Audio Apps",
+    "Theater & Cinema Management",
+    "Artist & Creator Platforms",
+    "Entertainment Marketplaces"
   ];
 
   return (
@@ -126,28 +126,28 @@ export default function IOSContentWriting() {
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                iOS Content Writing Services
+                Entertainment Solutions
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Professional content that maximizes your App Store presence, engages iOS users, and drives downloads with strategic ASO and compelling copy.
+              Create captivating streaming platforms, music apps, and entertainment experiences that engage audiences worldwide with cutting-edge technology.
             </p>
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
-              Start Your iOS Project
+              Launch Your Platform
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
-          {/* Floating iOS Icon */}
+          {/* Floating Entertainment Icon */}
           <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <div className="text-9xl opacity-20">📱</div>
+            <div className="text-9xl opacity-20">🎭</div>
           </div>
         </div>
 
         {/* Feature Pills */}
         <div className="relative max-w-7xl mx-auto px-6 pb-12">
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["ASO Optimized", "iOS Experts", "Conversion Focused"].map((feature, index) => (
+            {["HD Streaming", "AI-Powered", "Multi-Platform"].map((feature, index) => (
               <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
                 {feature}
               </div>
@@ -161,10 +161,10 @@ export default function IOSContentWriting() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">iOS Writing Services</span>
+              Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Entertainment Solutions</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specialized content solutions for iOS apps and mobile platforms
+              Comprehensive platforms for media streaming and entertainment delivery
             </p>
           </div>
 
@@ -206,7 +206,7 @@ export default function IOSContentWriting() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Why Choose Our{' '}
               <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                iOS Writing
+                Entertainment Technology
               </span>
             </h2>
           </div>
@@ -232,34 +232,34 @@ export default function IOSContentWriting() {
         </div>
       </section>
 
-      {/* Content Types Section */}
+      {/* Technologies Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                iOS Content Types
+                Technologies
               </span>{' '}
-              We Create
+              We Deploy
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From App Store listings to developer documentation, we cover all iOS content needs
+              Advanced streaming and entertainment technology stack
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {contentTypes.map((type, index) => (
+            {technologies.map((tech, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center group border border-gray-100 hover:border-purple-200"
               >
                 <div className="text-5xl mb-3 group-hover:scale-110 transition-transform">
-                  {type.icon}
+                  {tech.icon}
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-1">
-                  {type.name}
+                  {tech.name}
                 </h4>
-                <p className="text-sm text-gray-500">{type.type}</p>
+                <p className="text-sm text-gray-500">{tech.type}</p>
               </div>
             ))}
           </div>
@@ -271,10 +271,10 @@ export default function IOSContentWriting() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Writing Process</span>
+              Our <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Development Process</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A proven methodology for iOS content that performs
+              From concept to a fully-featured entertainment platform
             </p>
           </div>
 
@@ -303,7 +303,7 @@ export default function IOSContentWriting() {
         </div>
       </section>
 
-      {/* Benefits & Categories Section */}
+      {/* Benefits & Solutions Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
@@ -311,7 +311,7 @@ export default function IOSContentWriting() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                  What's Included
+                  Platform Features
                 </span>
               </h2>
               <div className="space-y-4">
@@ -328,19 +328,19 @@ export default function IOSContentWriting() {
               </div>
             </div>
 
-            {/* App Categories */}
+            {/* Solutions */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                  App Categories We Serve
+                  Solutions We Build
                 </span>
               </h2>
               <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:border-purple-200 transition-all duration-500">
                 <div className="space-y-3">
-                  {appCategories.map((category, index) => (
+                  {solutions.map((solution, index) => (
                     <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-purple-50 transition-colors">
                       <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full"></div>
-                      <span className="text-gray-700">{category}</span>
+                      <span className="text-gray-700">{solution}</span>
                     </div>
                   ))}
                 </div>
@@ -354,17 +354,17 @@ export default function IOSContentWriting() {
       <section className="py-20 px-6 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Ready to Boost Your App Store Presence?
+            Ready to Create Your Entertainment Platform?
           </h2>
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-            Let's create compelling iOS content that drives downloads and engages users
+            Let's build a captivating streaming experience that keeps audiences engaged and coming back
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-              Get Free Quote
+              Get Platform Demo
             </button>
             <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
-              View Portfolio
+              View Case Studies
             </button>
           </div>
         </div>
