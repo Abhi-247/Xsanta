@@ -25,21 +25,21 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@xsanta.com",
-      link: "mailto:hello@xsanta.com",
+      content: "xsantainnovation@gmail.com",
+      link: "mailto:xsantainnovation@gmail.com",
       gradient: "from-purple-500 to-purple-600"
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
+      content: "+91 9462650270",
       link: "tel:+15551234567",
       gradient: "from-pink-500 to-pink-600"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Tech Boulevard, San Francisco, CA 94105",
+      content: "Sansthan Path, Jhalana Gram, Malviya Nagar, Jaipur, Rajasthan 302017",
       link: "#",
       gradient: "from-purple-600 to-pink-600"
     },
@@ -135,7 +135,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
-                    placeholder="John Doe"
+                    placeholder="Full name"
                   />
                 </div>
                 <div>
@@ -165,7 +165,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+91 xxxxxxxxxx"
                   />
                 </div>
                 <div>
@@ -285,9 +285,9 @@ export default function Contact() {
                   <span className="font-semibold">Main Office</span>
                 </div>
                 <p className="text-sm text-purple-100">
-                  123 Tech Boulevard<br />
-                  San Francisco, CA 94105<br />
-                  United States
+                  Sansthan Path<br />
+                  Jhalana Gram, Malviya Nagar<br />
+                  Jaipur, Rajasthan 302017
                 </p>
               </div>
             </div>
@@ -310,7 +310,7 @@ export default function Contact() {
                 <a href="#" className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                   <Facebook className="w-6 h-6 text-white" />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                <a href="https://www.instagram.com/xsanta_innovation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                   <Instagram className="w-6 h-6 text-white" />
                 </a>
               </div>
@@ -332,14 +332,20 @@ export default function Contact() {
             <p className="text-gray-600">Located in the heart of San Francisco's tech district</p>
           </div>
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-            <div className="h-96 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-purple-600 mx-auto mb-4" />
-                <p className="text-gray-600 font-medium">Interactive Map</p>
-                <p className="text-sm text-gray-500">Map integration would go here</p>
-              </div>
-            </div>
-          </div>
+  <div className="h-96">
+    <iframe
+      title="Interactive Map"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3383.0185541099877!2d75.8183!3d26.8679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db7b51669dee9%3A0x3708a6ae96453829!2sBhamashah%20Techno%20Hub!5e1!3m2!1sen!2sin!4v1762751644506!5m2!1sen!2sin"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
+
         </div>
       </div>
     </div>

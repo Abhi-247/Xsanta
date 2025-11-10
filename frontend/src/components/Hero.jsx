@@ -83,7 +83,8 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg overflow-hidden shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 hover:scale-110 transform">
+            <Link 
+            to="/services" className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg overflow-hidden shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 hover:scale-110 transform">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div className="absolute inset-0 bg-white/20 animate-shimmer" />
@@ -92,7 +93,7 @@ export default function Hero() {
                 Explore Services
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
               </span>
-            </button>
+            </Link>
 
             <Link 
              to="/contact"

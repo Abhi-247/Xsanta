@@ -43,6 +43,7 @@ import Automotive from "./pages/industries/Automotive";
 import Agriculture from "./pages/industries/Agriculture";
 import RealEstateConstruction from "./pages/industries/Realstate";
 import IOSContentWriting from "./pages/services/iOS";
+import Services from "./pages/ServicePage";
 
 function App() {
   return (
@@ -55,9 +56,9 @@ function App() {
           <Route path="pricing" element={<Pricing />} />
           <Route path="contact" element={<Contact />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="services" element={<Services/>} />
 
-          {/* ✅ Redirect base /services to /services/frontend */}
-          <Route path="services" element={<Navigate to="/services/frontend" replace />} />
+          
 
           {/* ✅ Sub-services */}
           <Route path="services/frontend" element={<Frontend />} />

@@ -44,11 +44,13 @@ export default function ClientsSection() {
             {duplicatedRow1.map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex items-center justify-center px-12 py-8"
+                className="flex-shrink-0 px-4"
                 style={{ minWidth: '280px' }}
               >
-                <div className="text-3xl font-bold text-gray-800 tracking-tight hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 cursor-pointer">
-                  {client.logo}
+                <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-white border-2 border-purple-200 rounded-2xl px-8 py-6 shadow-lg hover:shadow-2xl hover:border-purple-400 transition-all duration-300 cursor-pointer group">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent tracking-tight text-center transition-all duration-300">
+                    {client.logo}
+                  </div>
                 </div>
               </div>
             ))}
@@ -66,11 +68,13 @@ export default function ClientsSection() {
             {duplicatedRow2.map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex items-center justify-center px-12 py-8"
+                className="flex-shrink-0 px-4"
                 style={{ minWidth: '280px' }}
               >
-                <div className="text-3xl font-bold text-gray-800 tracking-tight hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 cursor-pointer">
-                  {client.logo}
+                <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-white border-2 border-purple-200 rounded-2xl px-8 py-6 shadow-lg hover:shadow-2xl hover:border-purple-400 transition-all duration-300 cursor-pointer group">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent tracking-tight text-center transition-all duration-300">
+                    {client.logo}
+                  </div>
                 </div>
               </div>
             ))}

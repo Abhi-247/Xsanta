@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Pen, Bot, Code, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Services() {
   return (
@@ -59,10 +60,10 @@ export default function Services() {
               </li>
             </ul>
             
-            <button className="group/btn flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all duration-300">
+            <Link  to="/contact" className="group/btn flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all duration-300">
               Learn More
               <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-            </button>
+            </Link>
           </div>
 
           {/* AI Automation Card */}
@@ -100,10 +101,10 @@ export default function Services() {
               </li>
             </ul>
             
-            <button className="group/btn flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all duration-300">
+            <Link to="/contact" className="group/btn flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all duration-300">
               Learn More
               <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-            </button>
+            </Link>
           </div>
 
           {/* IT Services Card */}
@@ -141,10 +142,10 @@ export default function Services() {
               </li>
             </ul>
             
-            <button className="group/btn flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all duration-300">
+            <Link  to="/contact"className="group/btn flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all duration-300">
               Learn More
               <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

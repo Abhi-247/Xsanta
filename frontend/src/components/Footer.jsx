@@ -17,13 +17,13 @@ const Footer = () => {
   ];
 
   const industries = [
-    {name:'Agriculture',path:'/industries/agriculture'},
-    {name:'Health & Beauty',path:'/industries/health-beauty'},
-    {name:'Automotive',path:'/industries/automotive'},
-    {name:'Sports & Fitness',path:'/industries/sports-fitness'},
-    {name:'Realestate & Construction',path:'/industries/realestate-construction'},
-    {name:'Entertainment & Gaming',path:'/industries/entertainment'},
-    {name:'Marketing & Advertising',path:'/industries/marketing'}
+    { name: 'Agriculture', path: '/industries/agriculture' },
+    { name: 'Health & Beauty', path: '/industries/health-beauty' },
+    { name: 'Automotive', path: '/industries/automotive' },
+    { name: 'Sports & Fitness', path: '/industries/sports-fitness' },
+    { name: 'Realestate & Construction', path: '/industries/realestate-construction' },
+    { name: 'Entertainment & Gaming', path: '/industries/entertainment' },
+    { name: 'Marketing & Advertising', path: '/industries/marketing' }
 
   ];
 
@@ -77,7 +77,7 @@ const Footer = () => {
                 <Link key={index}
                   to={link.path} className="text-purple-200 hover:text-pink-300 transition-colors duration-300  flex"
                 >
-                   {link.name}
+                  {link.name}
 
                 </Link>
               ))}
@@ -121,20 +121,22 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-pink-400 mt-1" />
-                <a href="mailto:hello@xsanta.com" className="text-purple-200 hover:text-pink-300">
-                  hello@xsanta.com
+                <a href="mailto:xsantainnovation@gmail.com" className="text-purple-200 hover:text-pink-300">
+                  xsantainnovation@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-pink-400 mt-1" />
                 <a href="tel:+15551234567" className="text-purple-200 hover:text-pink-300">
-                  +1 (555) 123-4567
+                  +91 9462650270
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-pink-400 mt-1" />
+                <MapPin className="w-8 h-7 text-pink-400 mt-1" />
                 <span className="text-purple-200">
-                  123 Innovation Drive <br /> Tech City, TC 12345
+                  Sansthan Path
+                  Jhalana Gram, Malviya Nagar
+                  <br /> Jaipur, Rajasthan 30201
                 </span>
               </li>
             </ul>

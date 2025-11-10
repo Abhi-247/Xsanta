@@ -5,6 +5,7 @@ import myfirstfoot from "../assets/my-foot-first.jpeg"
 import FinWave from "../assets/finwave.jpeg"
 import Alexch from "../assets/gamedev.jpeg"
 import makemytrip from "../assets/make-my-trip.jpeg"
+import { Link } from 'react-router-dom';
 
 
 export default function XSantaPortfolio() {
@@ -247,9 +248,9 @@ export default function XSantaPortfolio() {
           <p className="text-xl md:text-2xl text-gray-700 mb-8">
             Let's bring your vision to life with our expertise and innovative approach.
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          <Link to="/contact" className="px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
             Start Your Project
-          </button>
+          </Link>
         </div>
       </div>
 
