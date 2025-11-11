@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { Smartphone, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Code, Layers } from 'lucide-react';
 
 export default function Android() {
@@ -121,7 +122,7 @@ export default function Android() {
       <section className="relative bg-gradient-to-br from-purple-50 via-pink-50 to-white overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
-        
+
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -174,13 +175,11 @@ export default function Android() {
                 key={index}
                 onMouseEnter={() => setHoveredService(index)}
                 onMouseLeave={() => setHoveredService(null)}
-                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border ${
-                  hoveredService === index ? 'border-purple-200 -translate-y-2' : 'border-gray-100'
-                }`}
+                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border ${hoveredService === index ? 'border-purple-200 -translate-y-2' : 'border-gray-100'
+                  }`}
               >
-                <div className={`text-purple-600 mb-4 transition-transform duration-300 ${
-                  hoveredService === index ? 'scale-110' : ''
-                }`}>
+                <div className={`text-purple-600 mb-4 transition-transform duration-300 ${hoveredService === index ? 'scale-110' : ''
+                  }`}>
                   {typeof service.icon === 'string' ? (
                     <span className="text-5xl">{service.icon}</span>
                   ) : (
@@ -359,13 +358,21 @@ export default function Android() {
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
             Let's transform your idea into a powerful Android application that users will love
           </p>
+
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-              Get Free Consultation
-            </button>
-            <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
-              View Portfolio
-            </button>
+            {/* Link for Consultation Page */}
+            <Link to="/contact">
+              <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                Get Free Consultation
+              </button>
+            </Link>
+
+            {/* Link for Portfolio Page */}
+            <Link to="/portfolio">
+              <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
+                View Portfolio
+              </button>
+            </Link>
           </div>
         </div>
       </section>

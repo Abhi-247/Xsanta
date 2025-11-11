@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Megaphone, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Target, TrendingUp } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 export default function Marketing() {
   const [, setScrolled] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
@@ -132,10 +132,11 @@ export default function Marketing() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Drive growth with data-driven marketing strategies that increase brand visibility, generate qualified leads, and maximize your ROI across all digital channels.
             </p>
+            <Link to="/contact">
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Grow Your Business
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </button></Link>
           </div>
 
           {/* Floating Marketing Icon */}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Smartphone, Code, Zap, Users, CheckCircle, ArrowRight, ChevronRight, Layers, Rocket, Globe, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function FlutterDevPage() {
   const [, setScrolled] = useState(false);
@@ -165,10 +166,12 @@ export default function FlutterDevPage() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase with Google's powerful Flutter framework.
             </p>
+            <Link to="/contact">
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Start Your Project
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
           </div>
 
           {/* Floating Flutter Logo */}

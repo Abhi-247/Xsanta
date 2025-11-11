@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Car, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, MapPin, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Automotive() {
   const [, setScrolled] = useState(false);
@@ -132,10 +133,12 @@ export default function Automotive() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Drive innovation with intelligent automotive technology for dealerships, fleet management, service centers, and connected vehicle platforms.
             </p>
+            <Link to="/contact">
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Accelerate Your Business
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
           </div>
 
           {/* Floating Automotive Icon */}

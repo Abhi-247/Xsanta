@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Globe, Languages, Zap, CheckCircle, ArrowRight, ChevronRight, FileText, Users, Shield, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function ArticleTranslationPage() {
   const [, setScrolled] = useState(false);
@@ -132,10 +133,13 @@ export default function ArticleTranslationPage() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Break language barriers and reach global audiences with professional, accurate, and culturally-adapted article translation services.
             </p>
+            <Link to="/contact">
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Get a Free Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
+            
           </div>
 
           {/* Floating Globe Icon */}
@@ -412,8 +416,6 @@ export default function ArticleTranslationPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -422,16 +424,26 @@ export default function ArticleTranslationPage() {
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
             Get a free quote for your translation project and reach audiences worldwide
           </p>
+
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-              Get Free Quote
-            </button>
-            <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
-              Contact Us
-            </button>
+            {/* Link for Consultation Page */}
+            <Link to="/contact">
+              <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                Get Free Consultation
+              </button>
+            </Link>
+
+            {/* Link for Portfolio Page */}
+            <Link to="/portfolio">
+              <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
+                View Portfolio
+              </button>
+            </Link>
           </div>
         </div>
       </section>
+
+      
     </div>
   );
 }

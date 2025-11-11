@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Film, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Music, Video } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Entertainment() {
   const [, setScrolled] = useState(false);
@@ -132,10 +133,13 @@ export default function Entertainment() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Create captivating streaming platforms, music apps, and entertainment experiences that engage audiences worldwide with cutting-edge technology.
             </p>
-            <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
+            <Link to="/contact">
+             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Launch Your Platform
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
+           
           </div>
 
           {/* Floating Entertainment Icon */}

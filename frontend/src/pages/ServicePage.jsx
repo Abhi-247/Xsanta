@@ -69,14 +69,6 @@ export default function ExploreServices() {
     }
   ];
 
-  const handleNavigation = (path) => {
-    // For your actual implementation, replace this with your router navigation
-    // Example for React Router: navigate(path)
-    // Example for Next.js: router.push(path)
-    console.log('Navigate to:', path);
-    window.location.href = path;
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-white">
       {/* Header */}
@@ -119,10 +111,6 @@ export default function ExploreServices() {
                     href={service.path}
                     onMouseEnter={() => setHoveredCard(`${categoryIndex}-${serviceIndex}`)}
                     onMouseLeave={() => setHoveredCard(null)}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigation(service.path);
-                    }}
                     className={`
                       bg-white p-6 rounded-2xl shadow-lg cursor-pointer block
                       transition-all duration-300 border border-gray-100
@@ -179,10 +167,6 @@ export default function ExploreServices() {
           </p>
           <a
             href="/contact"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavigation('/contact');
-            }}
             className="inline-block bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
           >
             Contact Us for Custom Solutions

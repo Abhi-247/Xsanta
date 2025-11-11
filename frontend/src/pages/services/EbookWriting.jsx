@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, FileText, Award, Lightbulb, CheckCircle, ArrowRight, ChevronRight, Users, TrendingUp, Edit, Layout, Star, Download } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function EbookWritingPage() {
   const [, setScrolled] = useState(false);
@@ -168,10 +169,13 @@ export default function EbookWritingPage() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Professional eBook writing and design services that generate leads, educate audiences, and establish your brand as an industry authority.
             </p>
+            <Link to="/contact">
+            
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Create Your eBook
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
           </div>
 
           {/* Floating Book Icon */}

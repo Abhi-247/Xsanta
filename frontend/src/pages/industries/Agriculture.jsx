@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sprout, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Cloud, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Agriculture() {
   const [, setScrolled] = useState(false);
@@ -132,10 +133,11 @@ export default function Agriculture() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Transform farming with smart technology, IoT sensors, and data analytics to increase yields, reduce costs, and make sustainable decisions.
             </p>
-            <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
+            <Link to="/contact"><button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Modernize Your Farm
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </button></Link>
+            
           </div>
 
           {/* Floating Agriculture Icon */}

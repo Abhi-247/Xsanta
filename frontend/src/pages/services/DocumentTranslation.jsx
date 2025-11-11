@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, Globe, Award, Clock, CheckCircle, ArrowRight, ChevronRight, Shield, Zap, Users, Download, Upload } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 export default function DocumentTranslationPage() {
   const [, setScrolled] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
@@ -114,7 +114,7 @@ export default function DocumentTranslationPage() {
   ];
 
   const fileFormats = [
-    "PDF", "Word (DOC/DOCX)", "Excel (XLS/XLSX)", 
+    "PDF", "Word (DOC/DOCX)", "Excel (XLS/XLSX)",
     "PowerPoint (PPT/PPTX)", "Images (JPG/PNG)", "Scanned Documents"
   ];
 
@@ -124,7 +124,7 @@ export default function DocumentTranslationPage() {
       <section className="relative bg-gradient-to-br from-purple-50 via-pink-50 to-white overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
-        
+
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -136,14 +136,20 @@ export default function DocumentTranslationPage() {
               Professional, certified document translation services for legal, business, academic, and personal documents. Fast, accurate, and officially recognized worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-xl hover:scale-105">
-                <Upload className="w-5 h-5" />
-                Upload Document
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="bg-white border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-50 transition-all duration-300">
-                Get Instant Quote
-              </button>
+              <Link to="/contact">
+                <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-xl hover:scale-105">
+                  <Upload className="w-5 h-5" />
+                  Upload Document
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+
+              <Link to="/contact">
+                <button className="bg-white border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-50 transition-all duration-300">
+                  Get Instant Quote
+                </button>
+              </Link>
+
             </div>
           </div>
 
@@ -183,13 +189,11 @@ export default function DocumentTranslationPage() {
                 key={index}
                 onMouseEnter={() => setHoveredService(index)}
                 onMouseLeave={() => setHoveredService(null)}
-                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border ${
-                  hoveredService === index ? 'border-purple-200 -translate-y-2' : 'border-gray-100'
-                }`}
+                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border ${hoveredService === index ? 'border-purple-200 -translate-y-2' : 'border-gray-100'
+                  }`}
               >
-                <div className={`text-purple-600 mb-4 transition-transform duration-300 ${
-                  hoveredService === index ? 'scale-110' : ''
-                }`}>
+                <div className={`text-purple-600 mb-4 transition-transform duration-300 ${hoveredService === index ? 'scale-110' : ''
+                  }`}>
                   {typeof service.icon === 'string' ? (
                     <span className="text-5xl">{service.icon}</span>
                   ) : (
@@ -389,9 +393,8 @@ export default function DocumentTranslationPage() {
             ].map((plan, index) => (
               <div
                 key={index}
-                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 ${
-                  plan.popular ? 'border-purple-500 -translate-y-2' : 'border-gray-100 hover:border-purple-200'
-                }`}
+                className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 ${plan.popular ? 'border-purple-500 -translate-y-2' : 'border-gray-100 hover:border-purple-200'
+                  }`}
               >
                 {plan.popular && (
                   <div className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-sm font-bold py-2 px-4 rounded-full inline-block mb-4">
@@ -414,11 +417,10 @@ export default function DocumentTranslationPage() {
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 rounded-full font-bold transition-all duration-300 ${
-                  plan.popular
+                <button className={`w-full py-3 rounded-full font-bold transition-all duration-300 ${plan.popular
                     ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:shadow-xl'
                     : 'bg-purple-100 text-purple-600 hover:bg-purple-200'
-                }`}>
+                  }`}>
                   Get Started
                 </button>
               </div>

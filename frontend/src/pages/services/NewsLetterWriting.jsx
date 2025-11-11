@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Mail, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function NewsletterWriting() {
   const [, setScrolled] = useState(false);
@@ -132,10 +133,12 @@ export default function NewsletterWriting() {
             <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
               Transform your email marketing with engaging newsletters that build relationships, drive engagement, and convert subscribers into loyal customers.
             </p>
+            <Link to="/contact">
             <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
               Start Your Newsletter
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
           </div>
 
           {/* Floating Newsletter Icon */}
