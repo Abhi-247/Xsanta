@@ -149,7 +149,7 @@ export default function Navbar() {
 
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-1">
             {mainNavItems.map((item) => (
               <div
                 key={item.name}
@@ -226,7 +226,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg text-violet-700 hover:bg-violet-100 transition-colors duration-200"
+            className="md:hidden p-2 rounded-lg text-violet-700 hover:bg-violet-100 transition-colors duration-200"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -235,7 +235,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border border-violet-100 rounded-b-xl shadow-xl">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border border-violet-100 rounded-b-xl shadow-xl">
             <div className="px-4 py-4 space-y-2 max-h-96 overflow-y-auto">
               {mainNavItems.map((item) => (
                 <div key={item.name}>
