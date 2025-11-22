@@ -44,10 +44,13 @@ import Agriculture from "./pages/industries/Agriculture";
 import RealEstateConstruction from "./pages/industries/Realstate";
 import IOSContentWriting from "./pages/services/iOS";
 import Services from "./pages/ServicePage";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
@@ -70,15 +73,15 @@ function App() {
           <Route path="services/flutter" element={<FlutterDevPage />} />
           <Route path="services/poker" element={<Poker />} />
           <Route path="services/casino" element={<CasinoContentWriting />} />
-          <Route path="services/mobile-game" element={<MobileGameDevPage />} />
-          <Route path="services/browser-game" element={<BrowserGame />} />
+          <Route path="services/mobile-games" element={<MobileGameDevPage />} />
+          <Route path="services/browser-games" element={<BrowserGame />} />
           <Route path="services/ios" element={<IOSContentWriting/>} />
           <Route path="services/blog-writing" element={<BlogWriting />} />
           <Route path="services/article-writing" element={<ArticleWriting />} />
           <Route path="services/website-content" element={<WebsiteContentWriting />} />
           <Route path="services/product-description" element={<ProductDescription />} />
           <Route path="services/article-translation" element={<ArticleTranslationPage />} />
-          <Route path="services/doc-translation" element={<DocumentTranslationPage />} />
+          <Route path="services/document-translation" element={<DocumentTranslationPage />} />
           <Route path="services/website-translation" element={<WebsiteTranslation />} />
           <Route path="services/book-translation" element={<BookTranslationPage />} />
           <Route path="services/seo" element={<SEOWritingPage />} />

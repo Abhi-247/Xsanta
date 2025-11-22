@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Gamepad2, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Trophy, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function BrowserGame() {
   const [, setScrolled] = useState(false);
@@ -124,37 +123,183 @@ export default function BrowserGame() {
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
         
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Browser Game Development
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Create addictive, high-performance browser games that captivate players worldwide with stunning graphics and engaging gameplay mechanics.
-            </p>
-            <Link to="/contact">
-            <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
-              Start Your Game Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            </Link>
-          </div>
-
-          {/* Floating Game Icon */}
-          <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <div className="text-9xl opacity-20">🎮</div>
-          </div>
-        </div>
-
-        {/* Feature Pills */}
-        <div className="relative max-w-7xl mx-auto px-6 pb-12">
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["HTML5 Powered", "Cross-Platform", "Multiplayer Ready"].map((feature, index) => (
-              <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
-                {feature}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                  Browser Game Development
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
+                Create addictive, high-performance browser games that captivate players worldwide with stunning graphics and engaging gameplay mechanics.
+              </p>
+              <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
+                Start Your Game Project
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              {/* Feature Pills */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                {["HTML5 Powered", "Cross-Platform", "Multiplayer Ready"].map((feature, index) => (
+                  <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
+                    {feature}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right Side - Game Interface Mockup */}
+            <div className="relative hidden lg:block">
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
+                <Gamepad2 className="w-8 h-8 text-white" />
+              </div>
+              <div className="absolute -bottom-4 -left-8 w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+                <Trophy className="w-7 h-7 text-white" />
+              </div>
+              <div className="absolute top-1/4 -right-6 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Main Game Window */}
+              <div className="bg-gray-900 rounded-3xl shadow-2xl overflow-hidden border-4 border-gray-800">
+                {/* Game Header */}
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                      <Gamepad2 className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-white font-bold">Epic Quest</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  </div>
+                </div>
+
+                {/* Game Canvas Area */}
+                <div className="relative bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-6" style={{ height: '400px' }}>
+                  {/* Game Scene Elements */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    {/* Stars */}
+                    {[...Array(20)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute bg-white rounded-full animate-pulse"
+                        style={{
+                          width: Math.random() * 3 + 1 + 'px',
+                          height: Math.random() * 3 + 1 + 'px',
+                          top: Math.random() * 100 + '%',
+                          left: Math.random() * 100 + '%',
+                          animationDelay: Math.random() * 2 + 's',
+                          animationDuration: Math.random() * 3 + 2 + 's'
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Game Elements */}
+                  <div className="relative h-full flex items-center justify-center">
+                    {/* Player Character */}
+                    <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
+                      <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center shadow-lg animate-bounce" style={{ animationDuration: '1s' }}>
+                        <span className="text-3xl">🦸</span>
+                      </div>
+                    </div>
+
+                    {/* Platforms */}
+                    <div className="absolute bottom-12 left-1/4 w-24 h-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full shadow-lg"></div>
+                    <div className="absolute bottom-12 right-1/4 w-24 h-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full shadow-lg"></div>
+                    
+                    {/* Collectibles */}
+                    <div className="absolute top-20 left-1/3 animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.3s' }}>
+                      <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+                        <Star className="w-6 h-6 text-yellow-900 fill-yellow-900" />
+                      </div>
+                    </div>
+                    <div className="absolute top-24 right-1/3 animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.6s' }}>
+                      <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+                        <Star className="w-6 h-6 text-yellow-900 fill-yellow-900" />
+                      </div>
+                    </div>
+
+                    {/* Enemy */}
+                    <div className="absolute top-1/3 right-1/4 animate-pulse">
+                      <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                        <span className="text-2xl">👾</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* HUD Overlay */}
+                  <div className="absolute top-4 left-4 right-4 flex justify-between">
+                    <div className="bg-black/50 backdrop-blur-sm px-4 py-2 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <span className="text-yellow-400 text-sm">❤️ ❤️ ❤️</span>
+                      </div>
+                    </div>
+                    <div className="bg-black/50 backdrop-blur-sm px-4 py-2 rounded-lg">
+                      <div className="flex items-center gap-2 text-white text-sm font-bold">
+                        <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                        <span>250</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Level indicator */}
+                  <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-lg">
+                    <div className="text-white text-sm font-bold">Level 3</div>
+                  </div>
+                </div>
+
+                {/* Game Controls Info */}
+                <div className="bg-gray-800 px-6 py-3 flex items-center justify-center gap-6 text-gray-400 text-xs">
+                  <div className="flex items-center gap-2">
+                    <kbd className="bg-gray-700 px-2 py-1 rounded">←</kbd>
+                    <kbd className="bg-gray-700 px-2 py-1 rounded">→</kbd>
+                    <span>Move</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <kbd className="bg-gray-700 px-2 py-1 rounded">Space</kbd>
+                    <span>Jump</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* FPS Counter Card */}
+              <div className="absolute -bottom-8 -right-4 bg-white rounded-xl shadow-2xl p-4 border border-gray-200">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">Frame Rate</div>
+                    <div className="text-lg font-bold text-green-600">60 FPS</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Players Online Badge */}
+              <div className="absolute top-8 -right-2 bg-white rounded-xl shadow-xl p-3 border border-gray-100">
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-purple-600" />
+                  <div>
+                    <div className="text-xs text-gray-500">Players</div>
+                    <div className="text-sm font-bold text-purple-600">12.5K</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* HTML5 Badge */}
+              <div className="absolute bottom-24 -left-4 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl shadow-xl p-3 text-white">
+                <div className="text-center">
+                  <div className="text-2xl mb-1">⚡</div>
+                  <div className="text-xs font-bold">HTML5</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, BookOpen, Target } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, BookOpen, Target, TrendingUp } from 'lucide-react';
 
 export default function ArticleWriting() {
   const [, setScrolled] = useState(false);
@@ -124,38 +123,181 @@ export default function ArticleWriting() {
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
 
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Article Writing Services
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Professional content that captivates readers, drives engagement, and elevates your brand with compelling storytelling and strategic messaging.
-            </p>
-            <Link to="/contact" >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                  Article Writing Services
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
+                Professional content that captivates readers, drives engagement, and elevates your brand with compelling storytelling and strategic messaging.
+              </p>
               <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
                 Start Writing Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-            </Link>
 
-          </div>
-
-          {/* Floating Writing Icon */}
-          <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <div className="text-9xl opacity-20">✍️</div>
-          </div>
-        </div>
-
-        {/* Feature Pills */}
-        <div className="relative max-w-7xl mx-auto px-6 pb-12">
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["SEO Optimized", "100% Original", "Expert Writers"].map((feature, index) => (
-              <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
-                {feature}
+              {/* Feature Pills */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                {["SEO Optimized", "100% Original", "Expert Writers"].map((feature, index) => (
+                  <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
+                    {feature}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right Side - Article Document Mockup */}
+            <div className="relative hidden lg:block">
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
+                <PenTool className="w-8 h-8 text-white" />
+              </div>
+              <div className="absolute -bottom-4 -left-8 w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+                <BookOpen className="w-7 h-7 text-white" />
+              </div>
+              <div className="absolute top-1/4 -right-6 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
+                <Star className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Main Document Card */}
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                {/* Document Header */}
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-4 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                      <BookOpen className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="text-white">
+                      <div className="font-bold text-sm">Article.docx</div>
+                      <div className="text-xs opacity-80">2,450 words</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="px-3 py-1 bg-green-500 rounded-full text-white text-xs font-semibold">
+                      Published
+                    </div>
+                  </div>
+                </div>
+
+                {/* Document Content */}
+                <div className="p-8 space-y-6">
+                  {/* Title */}
+                  <div>
+                    <div className="h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded w-5/6 mb-2"></div>
+                    <div className="h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded w-4/6"></div>
+                  </div>
+
+                  {/* Meta Info */}
+                  <div className="flex gap-4 text-sm">
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <span className="text-purple-600">📅</span>
+                      <span>Nov 22, 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <span className="text-purple-600">👤</span>
+                      <span>John Writer</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <span className="text-purple-600">⏱️</span>
+                      <span>8 min read</span>
+                    </div>
+                  </div>
+
+                  {/* Paragraph Lines */}
+                  <div className="space-y-3">
+                    <div className="h-3 bg-gray-200 rounded w-full"></div>
+                    <div className="h-3 bg-gray-200 rounded w-full"></div>
+                    <div className="h-3 bg-gray-200 rounded w-5/6"></div>
+                  </div>
+
+                  {/* Subheading */}
+                  <div className="h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded w-3/5"></div>
+
+                  {/* More Content Lines */}
+                  <div className="space-y-3">
+                    <div className="h-3 bg-gray-200 rounded w-full"></div>
+                    <div className="h-3 bg-gray-200 rounded w-full"></div>
+                    <div className="h-3 bg-gray-200 rounded w-4/5"></div>
+                    <div className="h-3 bg-gray-200 rounded w-full"></div>
+                  </div>
+
+                  {/* Quote Box */}
+                  <div className="bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-lg">
+                    <div className="h-3 bg-purple-300 rounded w-4/5 mb-2"></div>
+                    <div className="h-3 bg-purple-300 rounded w-3/5"></div>
+                  </div>
+
+                  {/* Final Lines */}
+                  <div className="space-y-3">
+                    <div className="h-3 bg-gray-200 rounded w-full"></div>
+                    <div className="h-3 bg-gray-200 rounded w-5/6"></div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex gap-2 flex-wrap pt-4">
+                    <div className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
+                      SEO
+                    </div>
+                    <div className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">
+                      Marketing
+                    </div>
+                    <div className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">
+                      Content
+                    </div>
+                  </div>
+                </div>
+
+                {/* Document Footer */}
+                <div className="bg-gray-50 px-6 py-4 flex items-center justify-between border-t border-gray-200">
+                  <div className="flex items-center gap-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-1">
+                      <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                      <span>4.9</span>
+                    </div>
+                    <div>•</div>
+                    <div>1.2K views</div>
+                    <div>•</div>
+                    <div>45 shares</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* SEO Score Card */}
+              <div className="absolute -bottom-8 -right-4 bg-white rounded-xl shadow-2xl p-4 border border-gray-200">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">SEO Score</div>
+                    <div className="text-lg font-bold text-green-600">94/100</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Word Count Badge */}
+              <div className="absolute top-8 -right-2 bg-white rounded-xl shadow-xl p-3 border border-gray-100">
+                <div className="text-center">
+                  <div className="text-2xl mb-1">📝</div>
+                  <div className="text-xs text-gray-500">Words</div>
+                  <div className="text-sm font-bold text-purple-600">2,450</div>
+                </div>
+              </div>
+
+              {/* Readability Badge */}
+              <div className="absolute bottom-32 -left-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-xl p-3 text-white">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">👓</span>
+                  <div>
+                    <div className="text-xs opacity-90">Readability</div>
+                    <div className="text-lg font-bold">Easy</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -361,25 +503,16 @@ export default function ArticleWriting() {
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
             Let's create compelling articles that engage your audience and drive results
           </p>
-
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            {/* Link for Consultation Page */}
-            <Link to="/contact">
-              <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-                Get Free Consultation
-              </button>
-            </Link>
-
-            {/* Link for Portfolio Page */}
-            <Link to="/portfolio">
-              <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
-                View Portfolio
-              </button>
-            </Link>
+            <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+              Get Free Consultation
+            </button>
+            <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
+              View Portfolio
+            </button>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

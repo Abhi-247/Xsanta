@@ -56,6 +56,7 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div className="lg:col-span-1">
+            <Link to='/'>
             <div className="flex items-center gap-2 text-2xl font-bold text-white">
               <img
                 src={logoXsanta}
@@ -64,6 +65,7 @@ const Footer = () => {
               />
               XSANTA
             </div>
+            </Link>
             <p className="text-purple-200 leading-relaxed mt-4 mb-6">
               Empowering businesses with cutting-edge Content Writing, AI Automation, and IT Services for the digital age.
             </p>

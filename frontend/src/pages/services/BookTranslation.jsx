@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, Globe, Award, Users, CheckCircle, ArrowRight, ChevronRight, Star, Heart, Clock, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function BookTranslationPage() {
   const [, setScrolled] = useState(false);
@@ -131,37 +130,168 @@ export default function BookTranslationPage() {
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
         
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Book Translation
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Share your story with the world. Professional book translation services that preserve your voice, style, and message across languages and cultures.
-            </p>
-            <Link to="/contact">
-            <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
-              Get Translation Quote
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            </Link>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                  Book Translation
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
+                Share your story with the world. Professional book translation services that preserve your voice, style, and message across languages and cultures.
+              </p>
+              <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
+                Get Translation Quote
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
 
-          {/* Floating Book Icon */}
-          <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <div className="text-9xl opacity-20">📚</div>
-          </div>
-        </div>
-
-        {/* Feature Pills */}
-        <div className="relative max-w-7xl mx-auto px-6 pb-12">
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["Literary Experts", "All Genres", "Confidential"].map((feature, index) => (
-              <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
-                {feature}
+              {/* Feature Pills */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                {["Literary Experts", "All Genres", "Confidential"].map((feature, index) => (
+                  <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
+                    {feature}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right Side - Book Translation Mockup */}
+            <div className="relative hidden lg:block">
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
+                <BookOpen className="w-8 h-8 text-white" />
+              </div>
+              <div className="absolute -bottom-4 -left-8 w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+                <Globe className="w-7 h-7 text-white" />
+              </div>
+              <div className="absolute top-1/4 -right-6 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
+                <Heart className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Main Book Covers Display */}
+              <div className="relative flex gap-4 items-center justify-center">
+                {/* Original Book (Left) */}
+                <div className="relative transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+                  <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-lg shadow-2xl p-6" style={{ width: '180px', height: '260px' }}>
+                    <div className="h-full flex flex-col justify-between">
+                      <div>
+                        <div className="text-white text-xs font-semibold mb-2 opacity-80">ORIGINAL</div>
+                        <div className="space-y-2">
+                          <div className="h-4 bg-white/90 rounded w-5/6"></div>
+                          <div className="h-4 bg-white/90 rounded w-4/6"></div>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="h-2 bg-white/60 rounded w-full"></div>
+                        <div className="h-2 bg-white/60 rounded w-5/6"></div>
+                        <div className="h-2 bg-white/60 rounded w-4/6"></div>
+                      </div>
+                      <div>
+                        <div className="h-3 bg-white/80 rounded w-3/5 mb-1"></div>
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-3 h-3 fill-yellow-300 text-yellow-300" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-full shadow-lg text-xs font-bold text-purple-600">
+                    🇬🇧 English
+                  </div>
+                </div>
+
+                {/* Translation Arrow */}
+                <div className="flex flex-col items-center gap-2 px-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-xs font-semibold text-purple-600 bg-white px-2 py-1 rounded-full shadow">
+                    Translate
+                  </div>
+                </div>
+
+                {/* Translated Book (Right) */}
+                <div className="relative transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                  <div className="bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 rounded-lg shadow-2xl p-6" style={{ width: '180px', height: '260px' }}>
+                    <div className="h-full flex flex-col justify-between">
+                      <div>
+                        <div className="text-white text-xs font-semibold mb-2 opacity-80">TRANSLATED</div>
+                        <div className="space-y-2">
+                          <div className="h-4 bg-white/90 rounded w-5/6"></div>
+                          <div className="h-4 bg-white/90 rounded w-4/6"></div>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="h-2 bg-white/60 rounded w-full"></div>
+                        <div className="h-2 bg-white/60 rounded w-5/6"></div>
+                        <div className="h-2 bg-white/60 rounded w-4/6"></div>
+                      </div>
+                      <div>
+                        <div className="h-3 bg-white/80 rounded w-3/5 mb-1"></div>
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-3 h-3 fill-yellow-300 text-yellow-300" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded-full shadow-lg text-xs font-bold text-teal-600">
+                    🇪🇸 Español
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional Language Badges */}
+              <div className="mt-8 flex flex-wrap justify-center gap-2">
+                {[
+                  { flag: '🇫🇷', lang: 'Français' },
+                  { flag: '🇩🇪', lang: 'Deutsch' },
+                  { flag: '🇮🇹', lang: 'Italiano' },
+                  { flag: '🇯🇵', lang: '日本語' },
+                  { flag: '🇨🇳', lang: '中文' }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white px-3 py-1.5 rounded-full shadow-md text-xs font-semibold text-gray-700 border border-gray-200 hover:border-purple-300 transition-colors">
+                    {item.flag} {item.lang}
+                  </div>
+                ))}
+              </div>
+
+              {/* Stats Card */}
+              <div className="absolute -bottom-12 -right-4 bg-white rounded-xl shadow-2xl p-4 border border-gray-200">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Globe className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">Languages</div>
+                    <div className="text-lg font-bold text-purple-600">100+</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quality Badge */}
+              <div className="absolute top-8 -right-2 bg-white rounded-xl shadow-xl p-3 border border-gray-100">
+                <div className="text-center">
+                  <div className="text-2xl mb-1">🏆</div>
+                  <div className="text-xs text-gray-500">Quality</div>
+                  <div className="text-sm font-bold text-purple-600">Top Tier</div>
+                </div>
+              </div>
+
+              {/* Books Translated Badge */}
+              <div className="absolute bottom-32 -left-4 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl shadow-xl p-3 text-white">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">📚</span>
+                  <div>
+                    <div className="text-xs opacity-90">Translated</div>
+                    <div className="text-lg font-bold">2,000+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

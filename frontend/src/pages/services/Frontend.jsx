@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Code, Smartphone, Zap, ChevronRight, Check, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Code, Smartphone, Zap, ChevronRight, Check, ArrowRight, Layout, Palette } from 'lucide-react';
 
 export default function Frontend() {
   const [, setScrolled] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
+  const [typedText, setTypedText] = useState('');
+  const fullText = '<div className="app">';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,27 +15,24 @@ export default function Frontend() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < fullText.length) {
+        setTypedText(fullText.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
+
   const services = [
-    {
-      icon: <Code className="w-12 h-12" />,
-      title: "Custom Web Applications",
-      description: "Build tailored web applications that perfectly match your business requirements with modern frameworks and best practices."
-    },
-    {
-      icon: <Smartphone className="w-12 h-12" />,
-      title: "Responsive Design",
-      description: "Create websites that look stunning and function flawlessly across all devices and screen sizes."
-    },
-    {
-      icon: "🎨",
-      title: "UI/UX Implementation",
-      description: "Transform designs into pixel-perfect, interactive user interfaces with smooth animations and transitions."
-    },
-    {
-      icon: <Zap className="w-12 h-12" />,
-      title: "Performance Optimization",
-      description: "Optimize your frontend for lightning-fast loading times and superior user experience."
-    }
+    { icon: <Code className="w-12 h-12" />, title: "Custom Web Applications", description: "Build tailored web applications that perfectly match your business requirements with modern frameworks and best practices." },
+    { icon: <Smartphone className="w-12 h-12" />, title: "Responsive Design", description: "Create websites that look stunning and function flawlessly across all devices and screen sizes." },
+    { icon: "🎨", title: "UI/UX Implementation", description: "Transform designs into pixel-perfect, interactive user interfaces with smooth animations and transitions." },
+    { icon: <Zap className="w-12 h-12" />, title: "Performance Optimization", description: "Optimize your frontend for lightning-fast loading times and superior user experience." }
   ];
 
   const technologies = [
@@ -49,26 +47,10 @@ export default function Frontend() {
   ];
 
   const process = [
-    {
-      number: "01",
-      title: "Design Analysis",
-      description: "We analyze your design requirements and create a detailed frontend development plan."
-    },
-    {
-      number: "02",
-      title: "Component Development",
-      description: "Build reusable components using modern frameworks and best practices."
-    },
-    {
-      number: "03",
-      title: "Integration & Testing",
-      description: "Integrate components and conduct thorough testing across different browsers and devices."
-    },
-    {
-      number: "04",
-      title: "Optimization & Launch",
-      description: "Optimize performance and deploy your frontend application to production."
-    }
+    { number: "01", title: "Design Analysis", description: "We analyze your design requirements and create a detailed frontend development plan." },
+    { number: "02", title: "Component Development", description: "Build reusable components using modern frameworks and best practices." },
+    { number: "03", title: "Integration & Testing", description: "Integrate components and conduct thorough testing across different browsers and devices." },
+    { number: "04", title: "Optimization & Launch", description: "Optimize performance and deploy your frontend application to production." }
   ];
 
   const benefits = [
@@ -93,46 +75,108 @@ export default function Frontend() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* Hero Section - Updated */}
       <section className="relative bg-gradient-to-br from-purple-50 via-pink-50 to-white overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full blur-3xl opacity-20" />
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
         
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Frontend Development
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Create stunning, responsive, and high-performance user interfaces that captivate your audience and drive engagement with cutting-edge frontend technologies.
-            </p>
-            <Link to="/contact">
-            <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
-              Start Your Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            </Link>
-          </div>
-
-          {/* Floating Icons */}
-          <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <Code className="w-20 h-20 text-purple-300 opacity-40" />
-          </div>
-          <div className="hidden lg:block absolute right-40 bottom-20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
-            <Smartphone className="w-16 h-16 text-pink-300 opacity-40" />
-          </div>
-        </div>
-
-        {/* Feature Pills */}
-        <div className="relative max-w-7xl mx-auto px-6 pb-12">
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["Modern UI/UX", "Responsive Design", "Lightning Fast"].map((feature, index) => (
-              <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
-                {feature}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                  Frontend Development
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
+                Create stunning, responsive, and high-performance user interfaces that captivate your audience and drive engagement with cutting-edge frontend technologies.
+              </p>
+              <a href="/contact">
+                <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </a>
+              
+              {/* Feature Pills */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                {["Modern UI/UX", "Responsive Design", "Lightning Fast"].map((feature, index) => (
+                  <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
+                    {feature}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right Side - Code Editor Mockup */}
+            <div className="relative hidden lg:block">
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
+                <Code className="w-8 h-8 text-white" />
+              </div>
+              <div className="absolute -bottom-4 -left-8 w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+                <Layout className="w-7 h-7 text-white" />
+              </div>
+              <div className="absolute top-1/4 -right-6 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
+                <Palette className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Main Code Editor */}
+              <div className="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+                <div className="bg-gray-800 px-4 py-3 flex items-center gap-2">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <span className="text-gray-400 text-sm ml-4">App.jsx</span>
+                </div>
+                <div className="p-6 font-mono text-sm">
+                  <div className="text-gray-500">1  <span className="text-pink-400">import</span> <span className="text-purple-300">React</span> <span className="text-pink-400">from</span> <span className="text-green-400">'react'</span>;</div>
+                  <div className="text-gray-500">2  <span className="text-pink-400">import</span> {'{'} <span className="text-purple-300">useState</span> {'}'} <span className="text-pink-400">from</span> <span className="text-green-400">'react'</span>;</div>
+                  <div className="text-gray-500">3</div>
+                  <div className="text-gray-500">4  <span className="text-pink-400">export default function</span> <span className="text-yellow-300">App</span>() {'{'}</div>
+                  <div className="text-gray-500">5    <span className="text-pink-400">return</span> (</div>
+                  <div className="text-gray-500">6      <span className="text-blue-400">{typedText}</span><span className="animate-pulse text-white">|</span></div>
+                  <div className="text-gray-500">7        <span className="text-blue-400">{'<h1>'}</span><span className="text-white">Hello World</span><span className="text-blue-400">{'</h1>'}</span></div>
+                  <div className="text-gray-500">8      <span className="text-blue-400">{'</div>'}</span></div>
+                  <div className="text-gray-500">9    );</div>
+                  <div className="text-gray-500">10 {'}'}</div>
+                </div>
+              </div>
+
+              {/* Browser Preview Card */}
+              <div className="absolute -bottom-8 -right-4 w-48 bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                <div className="bg-gray-100 px-3 py-2 flex items-center gap-2">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
+                  </div>
+                  <div className="flex-1 bg-white rounded text-xs px-2 py-1 text-gray-400">localhost:3000</div>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-purple-50 to-pink-50">
+                  <div className="w-full h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded mb-2"></div>
+                  <div className="w-3/4 h-2 bg-gray-200 rounded mb-2"></div>
+                  <div className="w-1/2 h-2 bg-gray-200 rounded"></div>
+                  <div className="mt-3 w-16 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Stats Card */}
+              <div className="absolute top-8 -right-2 bg-white rounded-xl shadow-xl p-4 border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">Performance</div>
+                    <div className="text-lg font-bold text-green-600">98/100</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -306,9 +350,9 @@ export default function Frontend() {
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
             Let's create a stunning frontend that engages your users and drives your business forward
           </p>
-          <button className="bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+          <a href="/contact" className="inline-block bg-white text-purple-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
             Get Free Consultation
-          </button>
+          </a>
         </div>
       </section>
     </div>

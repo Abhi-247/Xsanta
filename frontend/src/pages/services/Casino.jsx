@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Target, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 export default function CasinoContentWriting() {
   const [, setScrolled] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
@@ -123,37 +123,147 @@ export default function CasinoContentWriting() {
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
         
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Casino Content Writing Services
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Professional gaming content that attracts players, builds trust, and drives engagement while maintaining compliance and promoting responsible gambling.
-            </p>
-            <Link to="/contact">
-            <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
-              Start Your Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            </Link>
-          </div>
-
-          {/* Floating Casino Icon */}
-          <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <div className="text-9xl opacity-20">🎰</div>
-          </div>
-        </div>
-
-        {/* Feature Pills */}
-        <div className="relative max-w-7xl mx-auto px-6 pb-12">
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["Casino Experts", "Compliance Ready", "Player Focused"].map((feature, index) => (
-              <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
-                {feature}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                  Casino Content Writing Services
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
+                Professional gaming content that attracts players, builds trust, and drives engagement while maintaining compliance and promoting responsible gambling.
+              </p>
+              <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
+                Start Your Project
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              {/* Feature Pills */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                {["Casino Experts", "Compliance Ready", "Player Focused"].map((feature, index) => (
+                  <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
+                    {feature}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right Side - Casino Gaming Mockup */}
+            <div className="relative hidden lg:block">
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
+                <PenTool className="w-8 h-8 text-white" />
+              </div>
+              <div className="absolute -bottom-4 -left-8 w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+                <Star className="w-7 h-7 text-white" />
+              </div>
+              <div className="absolute top-1/4 -right-6 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
+                <Target className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Main Casino Interface Card */}
+              <div className="bg-gradient-to-br from-gray-900 to-purple-900 rounded-3xl shadow-2xl overflow-hidden border-4 border-yellow-500">
+                {/* Header */}
+                <div className="bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-500 px-6 py-4">
+                  <div className="flex items-center justify-between text-white">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">🎰</span>
+                      <span className="font-bold text-lg">Royal Casino</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
+                        💰 $1,000
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Game Grid */}
+                <div className="p-6 space-y-4">
+                  {/* Featured Banner */}
+                  <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 text-white">
+                    <div className="flex items-center justify-between mb-3">
+                      <div>
+                        <div className="text-xs uppercase tracking-wide opacity-80 mb-1">Welcome Bonus</div>
+                        <div className="text-3xl font-bold">200% Match</div>
+                      </div>
+                      <div className="text-5xl">🎁</div>
+                    </div>
+                    <div className="text-sm opacity-90">Up to $5,000 + 100 Free Spins</div>
+                  </div>
+
+                  {/* Game Cards */}
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { emoji: '🎰', name: 'Mega Slots', status: 'Hot' },
+                      { emoji: '🃏', name: 'Blackjack', status: 'New' },
+                      { emoji: '🎲', name: 'Roulette', status: 'Live' },
+                      { emoji: '🎯', name: 'Poker', status: 'VIP' },
+                      { emoji: '🏆', name: 'Jackpot', status: '$2.5M' },
+                      { emoji: '♠️', name: 'Baccarat', status: 'Hot' }
+                    ].map((game, i) => (
+                      <div key={i} className="bg-gradient-to-br from-purple-800 to-pink-800 rounded-xl p-3 text-center hover:scale-105 transition-transform cursor-pointer relative">
+                        <div className="absolute top-1 right-1 bg-yellow-500 text-xs px-2 py-0.5 rounded-full text-gray-900 font-bold">
+                          {game.status}
+                        </div>
+                        <div className="text-3xl mb-2">{game.emoji}</div>
+                        <div className="text-white text-xs font-semibold">{game.name}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Stats Bar */}
+                  <div className="flex gap-3">
+                    <div className="flex-1 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg p-3 text-white text-center">
+                      <div className="text-xs opacity-80">Winners</div>
+                      <div className="text-xl font-bold">847</div>
+                    </div>
+                    <div className="flex-1 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg p-3 text-white text-center">
+                      <div className="text-xs opacity-80">Jackpots</div>
+                      <div className="text-xl font-bold">$8.2M</div>
+                    </div>
+                    <div className="flex-1 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg p-3 text-white text-center">
+                      <div className="text-xs opacity-80">Online</div>
+                      <div className="text-xl font-bold">2.4K</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* SEO Stats Card */}
+              <div className="absolute -bottom-8 -right-4 bg-white rounded-xl shadow-2xl p-4 border border-gray-200">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">SEO Score</div>
+                    <div className="text-lg font-bold text-green-600">92/100</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Badge */}
+              <div className="absolute top-8 -right-2 bg-white rounded-xl shadow-xl p-4 border border-gray-100">
+                <div className="text-center">
+                  <div className="text-3xl mb-1">📝</div>
+                  <div className="text-xs text-gray-500">Casino</div>
+                  <div className="text-sm font-bold text-purple-600">Content</div>
+                </div>
+              </div>
+
+              {/* Player Engagement Badge */}
+              <div className="absolute bottom-24 -left-4 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl shadow-xl p-3 text-white">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🏆</span>
+                  <div>
+                    <div className="text-xs opacity-90">Engagement</div>
+                    <div className="text-lg font-bold">High</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

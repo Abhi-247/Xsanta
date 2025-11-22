@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Smartphone, Code } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { PenTool, Zap, Shield, Users, CheckCircle, ArrowRight, ChevronRight, Star, Smartphone, Code, Layout } from 'lucide-react';
 
 export default function ReactNativeDevelopment() {
   const [, setScrolled] = useState(false);
@@ -124,37 +123,142 @@ export default function ReactNativeDevelopment() {
         <div className="absolute bottom-0 right-10 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20" />
         
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                React Native App Development
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-              Build powerful, cross-platform mobile apps with React Native. One codebase, two platforms, infinite possibilities for your business growth.
-            </p>
-            <Link to="/contact">
-            <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
-              Start Your Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            </Link>
-          </div>
-
-          {/* Floating React Native Icon */}
-          <div className="hidden lg:block absolute right-20 top-32 animate-bounce" style={{ animationDuration: '3s' }}>
-            <div className="text-9xl opacity-20">⚛️</div>
-          </div>
-        </div>
-
-        {/* Feature Pills */}
-        <div className="relative max-w-7xl mx-auto px-6 pb-12">
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            {["Cross-Platform", "Native Performance", "Fast Development"].map((feature, index) => (
-              <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
-                {feature}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                  React Native App Development
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
+                Build powerful, cross-platform mobile apps with React Native. One codebase, two platforms, infinite possibilities for your business growth.
+              </p>
+              <button className="group bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center gap-2 shadow-xl hover:scale-105">
+                Start Your Project
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              {/* Feature Pills */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                {["Cross-Platform", "Native Performance", "Fast Development"].map((feature, index) => (
+                  <div key={index} className="bg-white px-6 py-3 rounded-full text-purple-600 font-semibold border-2 border-purple-200 shadow-lg">
+                    {feature}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right Side - Mobile App Mockup */}
+            <div className="relative hidden lg:block">
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3s' }}>
+                <Code className="w-8 h-8 text-white" />
+              </div>
+              <div className="absolute -bottom-4 -left-8 w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+                <Layout className="w-7 h-7 text-white" />
+              </div>
+              <div className="absolute top-1/4 -right-6 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shadow-xl animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
+                <Smartphone className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Main Phone Mockup */}
+              <div className="relative mx-auto" style={{ width: '300px' }}>
+                <div className="bg-gray-900 rounded-[3rem] shadow-2xl p-3 border-8 border-gray-800">
+                  {/* Notch */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10"></div>
+                  
+                  {/* Screen */}
+                  <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-inner h-[600px]">
+                    {/* Status Bar */}
+                    <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 flex justify-between items-center text-white text-xs">
+                      <span>9:41</span>
+                      <div className="flex gap-1 items-center">
+                        <div className="w-4 h-3 border border-white rounded-sm"></div>
+                        <div className="w-4 h-3 border border-white rounded-sm"></div>
+                        <div className="w-4 h-3 border border-white rounded-sm"></div>
+                      </div>
+                    </div>
+
+                    {/* App Header */}
+                    <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-6 text-white">
+                      <div className="flex items-center justify-between mb-6">
+                        <h2 className="text-xl font-bold">My App</h2>
+                        <div className="w-8 h-8 bg-white/20 rounded-full"></div>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+                        <div className="h-2 bg-white/40 rounded w-3/4 mb-2"></div>
+                        <div className="h-2 bg-white/40 rounded w-1/2"></div>
+                      </div>
+                    </div>
+
+                    {/* Content Area */}
+                    <div className="p-6 space-y-4">
+                      {[1, 2, 3].map((item) => (
+                        <div key={item} className="bg-gray-50 rounded-xl p-4 flex items-center gap-4 shadow-sm">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg"></div>
+                          <div className="flex-1">
+                            <div className="h-3 bg-gray-300 rounded w-3/4 mb-2"></div>
+                            <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Bottom Navigation */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-4">
+                      <div className="flex justify-around">
+                        {['🏠', '🔍', '❤️', '👤'].map((icon, i) => (
+                          <div key={i} className={`text-2xl ${i === 0 ? 'opacity-100' : 'opacity-40'}`}>
+                            {icon}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Side buttons */}
+                <div className="absolute left-0 top-20 w-1 h-12 bg-gray-800 rounded-r-lg"></div>
+                <div className="absolute left-0 top-36 w-1 h-16 bg-gray-800 rounded-r-lg"></div>
+                <div className="absolute left-0 top-56 w-1 h-16 bg-gray-800 rounded-r-lg"></div>
+                <div className="absolute right-0 top-32 w-1 h-20 bg-gray-800 rounded-l-lg"></div>
+              </div>
+
+              {/* React Native Logo Card */}
+              <div className="absolute -bottom-8 -left-4 bg-white rounded-xl shadow-2xl p-4 border border-gray-200">
+                <div className="flex items-center gap-3">
+                  <div className="text-4xl">⚛️</div>
+                  <div>
+                    <div className="text-sm font-bold text-purple-600">React Native</div>
+                    <div className="text-xs text-gray-500">Cross-Platform</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Performance Stats Card */}
+              <div className="absolute top-8 -right-2 bg-white rounded-xl shadow-xl p-4 border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">Performance</div>
+                    <div className="text-lg font-bold text-green-600">60 FPS</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Platform Badges */}
+              <div className="absolute -bottom-4 -right-6 flex gap-2">
+                <div className="bg-white rounded-lg shadow-lg px-3 py-2 border border-gray-200 text-sm font-semibold text-gray-700">
+                  🍎 iOS
+                </div>
+                <div className="bg-white rounded-lg shadow-lg px-3 py-2 border border-gray-200 text-sm font-semibold text-gray-700">
+                  🤖 Android
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

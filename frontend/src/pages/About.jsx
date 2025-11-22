@@ -1,7 +1,11 @@
 import React from 'react';
 import { Target, Eye, Award, Users, Zap, Heart, TrendingUp, Globe, Image } from 'lucide-react';
-import teamPhoto from '../assets/teamxsanta.png'
+import teamPhoto from '../assets/about.jpeg'
 import storyImage from '../assets/story.png'
+import rajesh from '../assets/rajesh.png'
+import amit from '../assets/amit.png'
+import priya from '../assets/priya.png'
+
 export default function About() {
   const values = [
     {
@@ -188,56 +192,60 @@ export default function About() {
       </div>
 
       {/* Team Section with Image Grid */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Meet Our{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                Team
-              </span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Talented professionals dedicated to delivering excellence
-            </p>
-          </div>
+     <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-white py-20">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        Meet Our{" "}
+        <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+          Team
+        </span>
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        Talented professionals dedicated to delivering excellence
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="relative">
-                <img src="https://image.pollinations.ai/prompt/Indian%20man%20in%20business%20attire,%20smiling,%20professional%20headshot?width=400&height=400&seed=1" alt="Team Member" className="w-full h-auto object-cover aspect-square" />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">Rajesh Sharma</h3>
-                <p className="text-purple-600 font-semibold mb-3">CEO & Founder</p>
-                <p className="text-gray-600 text-sm">"Leading the charge with innovation and dedication."</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="relative">
-                <img src="https://image.pollinations.ai/prompt/Indian%20woman%20in%20business%20attire,%20smiling,%20professional%20headshot?width=400&height=400&seed=2" alt="Team Member" className="w-full h-auto object-cover aspect-square" />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">Priya Singh</h3>
-                <p className="text-purple-600 font-semibold mb-3">Chief Technology Officer</p>
-                <p className="text-gray-600 text-sm">"Building cutting-edge solutions for our clients."</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="relative">
-                <img src="https://image.pollinations.ai/prompt/Indian%20man%20in%20smart%20casual,%20smiling,%20professional%20headshot?width=400&height=400&seed=3" alt="Team Member" className="w-full h-auto object-cover aspect-square" />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">Amit Kumar</h3>
-                <p className="text-purple-600 font-semibold mb-3">Head of Sales</p>
-                <p className="text-gray-600 text-sm">"Connecting clients with solutions that drive success."</p>
-              </div>
-            </div>
-          </div>
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Member 1 */}
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+        <div className="relative w-full aspect-square overflow-hidden">
+          <img src={rajesh} alt="Team Member" className="w-full h-full object-cover" />
+        </div>
+        <div className="p-6 text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-1">Rajesh Sharma</h3>
+          <p className="text-purple-600 font-semibold mb-3">CEO & Founder</p>
+          <p className="text-gray-600 text-sm">"Leading the charge with innovation and dedication."</p>
         </div>
       </div>
+
+      {/* Member 2 */}
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+        <div className="relative w-full aspect-square overflow-hidden">
+          <img src={priya} alt="Team Member" className="w-full h-full object-cover" />
+        </div>
+        <div className="p-6 text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-1">Priya Singh</h3>
+          <p className="text-purple-600 font-semibold mb-3">Chief Technology Officer</p>
+          <p className="text-gray-600 text-sm">"Building cutting-edge solutions for our clients."</p>
+        </div>
+      </div>
+
+      {/* Member 3 */}
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+        <div className="relative w-full aspect-square overflow-hidden">
+          <img src={amit} alt="Team Member" className="w-full h-full object-cover" />
+        </div>
+        <div className="p-6 text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-1">Amit Kumar</h3>
+          <p className="text-purple-600 font-semibold mb-3">Head of Sales</p>
+          <p className="text-gray-600 text-sm">"Connecting clients with solutions that drive success."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Why Choose Us */}
       <div className="max-w-7xl mx-auto px-6 py-20">
